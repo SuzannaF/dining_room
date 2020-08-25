@@ -16,7 +16,7 @@ puts "Creating chefs..."
 
 # date = DateTime.new(2020, 8, 25, 22, 12, 0)
 
-3.times do
+2.times do
   chef = Chef.new(
     name: "Joachim Alvarez",
     image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=325&q=80",

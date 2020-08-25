@@ -1,0 +1,15 @@
+.banner {
+  background-image: url(https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80);
+  background-size: cover;
+  height: 583px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &-text {
+    font-weight: 600;
+    font-size: 80px;
+    word-spacing: 10px;
+  }
+}
