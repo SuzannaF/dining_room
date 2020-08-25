@@ -3,7 +3,7 @@
 
 <h1>Dining Room</h1>
 
-<h2>Intimate dinners hosted by locals, cooked by professional chefs, with a special menu</h2>
+<p>Intimate dinners hosted by locals, cooked by professional chefs, with a special menu</p>
 
 <div class="container">
   <!-- Upcoming Events -->
@@ -17,8 +17,11 @@
       <br>
       <p>Joaquim’s proposed menu will take you on a journey to sunny Spanish countryside.</p>
       <!-- Date of event -->
-      <i class="fas fa-calendar-alt color-yellow"></i>
-      <%= link_to "Find out more", event_path(event), class: "btn find-more" %>
+      <% @events.each do |event| %>
+        <i class="fas fa-calendar-alt color-yellow"></i>
+        <p><%= event.date %></p>
+        <%= link_to "Find out more", event_path(event), class: "btn find-more"%>
+      <% end %>
     </div>
   </div>
 
@@ -29,3 +32,5 @@
     <!-- Carossel of three images -->
   </div>
 </div>
+
+<!-- Footer -->
