@@ -1,6 +1,18 @@
+// Index btn
 .find-more {
   width: 217px;
   height: 57px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
   background-color: $yellow;
 }
+
+.find-more:hover {
+  background-color: black;
+  color: $yellow;
+}
+
+.btn {
+  line-height: 2.5;
+}
+
+// ----------------------------------------------
