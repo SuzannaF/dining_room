@@ -50,41 +50,39 @@
   <h2>About Dining Room</h2>
 
   <div class="main-card">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide carousel-size" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="left-card">
-            <%= image_tag "table.jpg", id: "dining-img", alt: "Dining Room", width: 300%>
-          </div>
-          <div class="right-card">
+
+         <div class="carousel-item active">
+          <img class="d-block w-100 img-opacity" src="assets/table.jpg" alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
             <h2>Local hosts</h2>
             <p>Open the doors of their dining room to you</p>
           </div>
         </div>
+
         <div class="carousel-item">
-          <div class="left-card">
-            <%= image_tag "chef.jpg", id: "chef-img", alt: "Chef", width: 300%>
-          </div>
-          <div class="right-card">
+          <img class="d-block w-100 img-opacity img-fluid" src="assets/chef.jpg" alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
             <h2>Professional chefs</h2>
             <p>Every event is catered by a professional chef, who creates a special menu with a personal story behind it</p>
-          </div>
+           </div>
         </div>
+
         <div class="carousel-item">
-          <div class="left-card">
-            <%= image_tag "people.jpg", id: "people-img", alt: "People", width: 300%>
-          </div>
-          <div class="right-card">
-            <h2>Meet like-minded people</h2>
+          <img class="d-block w-100 img-opacity" src="assets/people.jpg" alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
+             <h2>Meet like-minded people</h2>
             <p>Meet new people</p>
           </div>
         </div>
+
       </div>
-      <a class="carousel-control-prev color-black" href="#carouselExampleControls" role="button" data-slide="prev">
+      <a class="carousel-control-prev color-black arrow-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next color-black" href="#carouselExampleControls" role="button" data-slide="next">
+      <a class="carousel-control-next color-black arrow-next" href="#carouselExampleControls" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
