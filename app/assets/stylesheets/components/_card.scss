@@ -5,13 +5,12 @@
   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
-// .main-card-about {
-//   width: 100%;
-//   padding: 50px;
-//   margin: 50px 0 50px 0;
-//   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
-//   max-height: 500px;
-// }
+.card-about {
+  overflow: auto;
+  height: 607px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 40px;
+}
 
 // ---------------------------------------------------
 // UPCOMING EVENTS
@@ -29,39 +28,7 @@
   }
 }
 
-// Give a colour black to the arrows inside the carousel
-.color-black {
-  filter: invert(1);
-}
-
-// Move the link arrows to the edges of the card:
-.carousel-control-prev {
-    left: -78px;
-}
-
-.carousel-control-next {
-    right: -78px;
-}
-
-
-
-
-// --------------------------------------------------
-// ABOUT DINING ROOM
-
-.img-opacity {
-  opacity: 0.7;
-}
-
-// Move the link arrows to the edges of the card:
-.arrow-prev {
-    left: -90px;
-}
-
-.arrow-next {
-    right: -90px;
-}
-
+// -----------------------------------------------------
 // show page
 
 .event-card {
