@@ -1,4 +1,5 @@
 class Chef < ApplicationRecord
   has_many :events
-  validates :name, :image, :description, presence: true
+  has_one_attached :photo
+  validates :name, :description, presence: true
 end

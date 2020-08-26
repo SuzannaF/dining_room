@@ -28,6 +28,9 @@
   }
 }
 
+// -----------------------------------------------------
+// show page
+
 .event-card {
   width: 100%;
   padding: 50px;
@@ -35,6 +38,13 @@
   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
   position: relative;
   display:flex;
-  padding-left: 100px
+  padding-left: 50px;
+  padding-top: 30px;
+
 }
 
+.text-card {
+  padding-left: 30px;
+  padding-top: 60px;
+  text-align: justify;
+}
