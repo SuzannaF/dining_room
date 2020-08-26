@@ -7,57 +7,56 @@
   </div>
 </div>
 
+<!--THE PROBLEM IS ON LINE 19 'ACTIVE' IF STATEMENT -->
+
 <div class="container">
   <!-- Upcoming Events -->
   <h2>Upcoming events</h2>
-
   <div class="main-card">
-    <div>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <% @events.each_with_index do |event, index| %>
-            <div class="carousel-item <%= "active" if index == 0 %>">
-              <div class="left-card">
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @events.each_with_index do |event, index| %>
+          <div class="carousel-item <%="active" if index == 0 %>">
+            <div class="left-card">
               <!-- Image chef -->
               <%= cl_image_tag event.chef.photo.key, class: ""%>
-              </div>
-
-              <div class="right-card">
-                <!-- Chef's name as title -->
-                <p><%= event.chef.name %></p>
-                <p><%= event.description %></p>
-                <br>
-                <p>Joaquim’s proposed menu will take you on a journey to sunny Spanish countryside.</p>
-                <i class="fas fa-calendar-alt color-yellow"></i>
-                <p><%= event.date %></p>
-                <%= link_to "Find out more", event_path(event), class: "btn find-more"%>
-              </div>
             </div>
-          <% end %>
-        </div>
-        <!-- Links to scroll on the carousel -->
-        <a class="carousel-control-prev color-black" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next color-black" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+            <div class="right-card">
+              <!-- Chef's name as title -->
+              <p><%= event.chef.name %></p>
+              <p><%= event.description %></p>
+              <br>
+              <p>Joaquim’s proposed menu will take you on a journey to sunny Spanish countryside.</p>
+              <i class="fas fa-calendar-alt color-yellow"></i>
+              <p><%= event.date %></p>
+              <%= link_to "Find out more", event_path(event), class: "btn find-more"%>
+            </div>
+          </div>
+        <% end %>
       </div>
+      <!-- Links to scroll on the carousel -->
+      <a class="carousel-control-prev color-black" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next color-black" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+
   </div>
+
   <!-- About Dining Room -->
   <h2>About Dining Room</h2>
 </div>
 
 <div class="card-about">
-
   <div class="container">
+
     <div id="carouselExampleControls" class="carousel slide carousel-size" data-ride="carousel">
-
       <div class="carousel-inner">
-
         <div class="carousel-item active">
           <img class="d-block w-100 img-opacity" src="assets/table.jpg" alt="First slide">
           <div class="right-card-about">
@@ -65,25 +64,21 @@
             <p>Open the doors of their dining room to you</p>
           </div>
         </div>
-
         <div class="carousel-item">
           <img class="d-block w-100 img-opacity img-fluid" src="assets/chef.jpg" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
             <h2>Professional chefs</h2>
             <p>Every event is catered by a professional chef, who creates a special menu with a personal story behind it</p>
-           </div>
+          </div>
         </div>
-
         <div class="carousel-item">
           <img class="d-block w-100 img-opacity" src="assets/people.jpg" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
-             <h2>Meet like-minded people</h2>
+            <h2>Meet like-minded people</h2>
             <p>Meet new people</p>
           </div>
         </div>
-
       </div>
-
       <a class="carousel-control-prev color-black arrow-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -92,8 +87,8 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-
     </div>
+
   </div>
 </div>
 <!-- Footer -->
