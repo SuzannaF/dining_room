@@ -4,5 +4,5 @@ class Event < ApplicationRecord
   has_many :dishes, through: :menus
   belongs_to :chef
   belongs_to :user
-  validates :address, :price, :capacity, :date, presence: true
+  validates :address, :price, :capacity, :date, :description, presence: true
 end
