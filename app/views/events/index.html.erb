@@ -19,7 +19,7 @@
             <div class="carousel-item <%= "active" if index == 0 %>">
               <div class="left-card">
               <!-- Image chef -->
-              <%= cl_image_tag event.chef.photo.key, class: ""%>
+              <%= cl_image_tag event.chef.photo.key, class: "event-image"%>
               </div>
 
               <div class="right-card">
@@ -27,7 +27,6 @@
                 <p><%= event.chef.name %></p>
                 <p><%= event.description %></p>
                 <br>
-                <p>Joaquim’s proposed menu will take you on a journey to sunny Spanish countryside.</p>
                 <i class="fas fa-calendar-alt color-yellow"></i>
                 <p><%= event.date %></p>
                 <%= link_to "Find out more", event_path(event), class: "btn find-more"%>
