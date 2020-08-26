@@ -19,12 +19,13 @@
             <div class="carousel-item <%= "active" if index == 0 %>">
               <div class="left-card">
               <!-- Image chef -->
-
+              <%= cl_image_tag event.chef.photo.key, class: ""%>
               </div>
 
               <div class="right-card">
                 <!-- Chef's name as title -->
-                <p>Joaquim is a chef from Barcelona, who has been living in Berlin for the past 7 years. He is currently working at Chucha.</p>
+                <p><%= event.chef.name %></p>
+                <p><%= event.description %></p>
                 <br>
                 <p>Joaquim’s proposed menu will take you on a journey to sunny Spanish countryside.</p>
                 <i class="fas fa-calendar-alt color-yellow"></i>
