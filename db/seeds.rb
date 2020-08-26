@@ -42,13 +42,13 @@ chef_two = Chef.new(
 chef_two.photo.attach(io: file, filename: 'nakayama.gif', content_type: 'image/gif')
 chef_two.save!
 
-file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449570/marcus_samuelsson_zrhcbu.jpg')
-chef_three = Chef.new(
-  name: "Marcus Samuelsson",
-  description: "Niki was born in Japan, in Tokyo. She moved with her family to Europe when she was a teenager. Despite having spent most of her live in Europe, it was through food, japanese traditional food, that her family kept the conection to her heritage. She has hopened one the most prestigious japanese restaurants here in Berlin and it’s our great pleasure to have her at Dining Room for the first time this evening.",
-  )
-chef_three.photo.attach(io: file, filename: 'samuelsson.jpg', content_type: 'image/jpg')
-chef_three.save!
+# file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449570/marcus_samuelsson_zrhcbu.jpg')
+# chef_three = Chef.new(
+#   name: "Marcus Samuelsson",
+#   description: "Niki was born in Japan, in Tokyo. She moved with her family to Europe when she was a teenager. Despite having spent most of her live in Europe, it was through food, japanese traditional food, that her family kept the conection to her heritage. She has hopened one the most prestigious japanese restaurants here in Berlin and it’s our great pleasure to have her at Dining Room for the first time this evening.",
+#   )
+# chef_three.photo.attach(io: file, filename: 'samuelsson.jpg', content_type: 'image/jpg')
+# chef_three.save!
 
   # ------------ USER SEEDS
 
@@ -79,10 +79,10 @@ chef_three.save!
 
   puts "Creating events..."
 
-file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449578/spanish-image_c1yn6q.jpg')
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449578/spanish-image_c1yn6q.jpg')
   event_one = Event.new(
     address: "Bergmannstraße 59, 10961 Berlin",
-    date: date_one, #Faker::Date.forward(days: 23),
+    date: date_one,
     description: "Joaquim is a chef from Barcelona, who has been living in Berlin for the past 7 years. He is currently working at Chucha. Joaquim’s proposed menu will take you on a journey to sunny Spanish countryside.",
     price: 80,
     capacity: rand(5..20),
@@ -92,15 +92,15 @@ file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449578/s
   event_one.photo.attach(io: file, filename: 'spanish-image.jpg', content_type: 'image/jpg')
   event_one.save!
 
-file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/jap-image_ys3hpp.jpg')
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/jap-image_ys3hpp.jpg')
   event_two = Event.new(
     address: "Linienstraße 75, 10119 Berlin",
     date: date_two,
     description: "Chef Niki started her culinary journey in her home town, Tokyo. She is renowned for her her technique in traditional sushi and is currently traveling around the world, showcasing her skills. As she’s passing by Berlin, we have the pleasure to introduce her and her sushi menu, Japanese traditional style.",
     price: 80,
     capacity: rand(5..20),
-    user: user_one,
-    chef: chef_one
+    user: user_two,
+    chef: chef_two
     )
   event_two.photo.attach(io: file, filename: 'jap-image.jpg', content_type: 'image/jpg')
   event_two.save!
@@ -112,7 +112,7 @@ file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/j
     price: 65,
     capacity: rand(5..20),
     user: user_one,
-    chef: chef_three
+    chef: chef_two
     )
   event_three.save!
 
@@ -120,11 +120,11 @@ file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/j
 
   puts "Creating bookings..."
 
-   booking = Booking.new(
+  booking = Booking.new(
     number_people: rand(1..2),
     user: user_one,
     event: event_three
-  )
+    )
   booking.save!
 
   # ------------ REVIEW SEEDS
@@ -135,7 +135,7 @@ file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/j
     comment: "Our host Serena was amazing, everything was set up perfectly. Chef Joachim Alvarez food was cooked to perfection.",
     rating: 5,
     booking: booking
-  )
+    )
   review.save!
 
   # ------------ MENU SEEDS
@@ -144,12 +144,12 @@ file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/j
 
   menu_one = Menu.new(
     event: event_one
-  )
+    )
   menu_one.save!
 
-    menu_two = Menu.new(
+  menu_two = Menu.new(
     event: event_two
-  )
+    )
   menu_two.save!
 
   # ------------ DISH SEEDS
@@ -161,29 +161,29 @@ file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/j
     name: "Appetizer",
     description: "Smoked tortilla made with organic free-range eggs, topped with a secret spice mix.",
     menu: menu_one
-  )
+    )
   dish_appetizer.photo.attach(io: file, filename: 'tortilla.jpg', content_type: 'image/jpg')
   dish_appetizer.save!
 
-file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449575/pexels-cottonbro-4253320_iwszqy.jpg')
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449575/pexels-cottonbro-4253320_iwszqy.jpg')
   dish_main = Dish.new(
     name: "Main Course",
     description: "Sirloin barbeque grilled, beautifully charred , served with a take on patatas bravas, golden on the outside and soft on the inside, sprinkled with fresh herbs.",
     image: "https://images.unsplash.com/photo-1595519516956-9d085ab1cd50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
     menu: menu_one
-  )
+    )
   dish_main.photo.attach(io: file, filename: 'sirloin.jpg', content_type: 'image/jpg')
   dish_main.save!
 
-file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449566/bantersnaps-tdDRh4lQga0-unsplash_ljsjbm.jpg')
-   dish_dessert = Dish.new(
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449566/bantersnaps-tdDRh4lQga0-unsplash_ljsjbm.jpg')
+  dish_dessert = Dish.new(
     name: "Dessert",
     description: "Warm churros filed with vanilla icecream, sprinkled with sugar and cinamon, served together with a flowerless chocolate cake and fresh strawberries.",
     image: "https://images.unsplash.com/photo-1595519516956-9d085ab1cd50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
     menu: menu_one
-   )
-   dish_dessert.photo.attach(io: file, filename: 'churros.jpg', content_type: 'image/jpg')
-   dish_dessert.save!
+    )
+  dish_dessert.photo.attach(io: file, filename: 'churros.jpg', content_type: 'image/jpg')
+  dish_dessert.save!
 
 
-puts "Done!"
+  puts "Done!"
