@@ -1,15 +1,30 @@
-.banner {
-  background-image: url(https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80);
+// INDEX BANNER
+.banner-index {
+  background-image: url("main_banner.jpg");
   background-size: cover;
   height: 583px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 50px;
 
-  &-text {
-    font-weight: 600;
-    font-size: 80px;
-    word-spacing: 10px;
+  p {
+    font-weight: 500;
+    font-size: 25px;
+    color: rgb(68, 68, 66);
   }
+}
+
+.banner-text {
+  text-align: left;
+  position: relative;
+  left: -47px;
+}
+
+.banner-headers {
+  font-weight: 600;
+  font-size: 80px;
+  word-spacing: 10px;
 }
