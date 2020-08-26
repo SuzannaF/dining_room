@@ -1,5 +1,9 @@
 class Event < ApplicationRecord
-  has_many :bookings
+  # Added dependent destroy to bookings, so that if an event is
+  # 'deleted' by 'host' the bookings are also deleted
+  # In the real world, we would probably include a message of warning
+  # to the atendees
+  has_many :bookings, dependent: :destroy
   has_one :menu
   has_one_attached :photo
   has_many :dishes, through: :menus
