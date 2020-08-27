@@ -3,7 +3,6 @@
 .color-black {
   filter: invert(1);
 }
-
 // Move the link arrows to the edges of the card:
 .carousel-control-prev {
     left: -78px;
@@ -13,28 +12,62 @@
     right: -78px;
 }
 
+//-----------------------------
+.event-image {
+  height: 396px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 1px;
+  padding-left: 50px;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    width: 100%;
+}
+
+.right-card {
+  padding-right: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p{
+    text-align: justify;
+  }
+}
+
+//------------------------------
+#date-container {
+  display: flex;
+}
+
+#p-position {
+  position: relative;
+  right: -19px;
+  bottom: 3px;
+}
+
 // --------------------------------------------------
 // INDEX - ABOUT DINING ROOM
 
-.img-opacity {
-  opacity: 0.7;
-}
-
 // Move the link arrows to the edges of the card:
 .arrow-prev {
-    left: -90px;
+  left: -90px;
 }
 
 .arrow-next {
-    right: -90px;
+  right: -90px;
 }
 
-.event-image {
-  height: 396px;
-  width: 50%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  border-radius: 7px;
-  margin-bottom: 10px;
+.right-card-about {
+  padding-right: 85px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.left-card-about {
+  padding-left: 32px;
+}
