@@ -25,7 +25,7 @@
                 <p><%= event.description %></p>
                 <div id="date-container">
                   <i class="fas fa-calendar-alt color-yellow"></i>
-                  <p class="p-position"><%= event.date %></p>
+                  <p class="p-position"><%= event.date.strftime("%d of %B, %Y") %></p>
                 </div>
                 <%= link_to "Find out more", event_path(event), class: "btn yellow-btn", id: "btn-position" %>
               </div>

@@ -10,11 +10,11 @@
 <div class="container">
   <div id="event-date">
     <i class="fas fa-calendar-alt color-yellow" id="date-event-show"></i>
-    <p id="p-date-show"><%= @event.date %></p>
+    <p id="p-date-show"><%= @event.date.strftime("%d of %B, %Y") %></p>
   </div>
 
   <!-- ----------------------------------------------------- -->
-  <h2>About Joaquim Alvarez</h2>
+  <h2>About <%= @event.chef.name %></h2>
 
   <div class="event-card">
     <div class="text-card-right">
