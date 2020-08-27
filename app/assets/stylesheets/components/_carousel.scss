@@ -28,3 +28,13 @@
 .arrow-next {
     right: -90px;
 }
+
+.event-image {
+  height: 396px;
+  width: 50%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
