@@ -1,0 +1,6 @@
+<div class="form">
+  <%= simple_form_for [ @event, @booking ] do |f| %>
+  <%= f.input :number_people, id: "number-people" %>
+  <%= f.submit "Book", class: "btn btn-warning btn-book w-100"%>
+  <% end %>
+</div>
