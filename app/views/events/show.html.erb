@@ -1,3 +1,4 @@
+
 <!-- BOOTSTRAP MODAL BOOKING -->
 
 
@@ -8,98 +9,147 @@
     <i class="fas fa-calendar-alt color-yellow"></i>
     <!--  the code below needs to be changed -->
     <%#= link_to "Reserve this event", event_path(event), class: "btn yellow-btn" %>
-  </div>
-</div>
 
-<!-- the date of the event msut be placed here -->
-<div class="container">
-  <h2>About Joaquim Alvarez</h2>
-  <div class="event-card">
-    <div class="text-card-right">
-      <!-- Image chef -->
-      <p>Joaquim was born in 1985 in Barcelona and as a young boy he used to help his grandparents at the family farm during his summer holidays. </p>
-      <br>
-      <p>That was when he fell in love with food, while helping grow the produce and then learn how to best used them to create the most delicious and simple recipes.</p>
-      <br>
-      <p>His childohood has defined his style as a chef. He has traveled the world, and learned with the locals, how to make the best traditional and in-season dishes.</p>
-    </div>
-    <%= image_tag "louis-hansel.jpg", id: "louis-hansel-img", alt: "chef", width: 200%>
-  </div>
-
-
-
-  <h2>About the Menu</h2>
-  <div class="event-card">
-    <%= image_tag "menu.jpg", id: "menu-img", alt: "menu", width: 200%>
-    <div class="text-card-left">
-      <p>This evening you will be served a menu that will take you on a journey to beautiful Spanish countryside. The simple but rich flavours of olive oil, tomato and the best beef cut will be paired with a beautiful red wine from the region of Penedès, one hour away from Barcelona. This was one of the first dishes Joaquim perfected with his grandmother. Appetiser and deseart will be a surpising complemente to the main star of the show. </p>
-      <!-- needs a see the menu btn -->
-    </div>
-  </div>
-
-
-  <h2>About the venue</h2>
-  <div class="event-card">
-    <%= image_tag "olive.jpg", id: "olive-img", alt: "olive", width: 200%>
-    <div class="text-card-left">
-      <div class="container-stars">
-        <h2>Gabriela Sanchez</h2>
-        <!-- star code -->
-        <i class="far fa-star checked"></i>
-        <i class="far fa-star checked"></i>
-        <i class="far fa-star checked"></i>
-        <i class="far fa-star"></i>
+    <!-- navbar -->
+    <div class="banner-event" style="background: url(<%= url_for(@event.photo) %>); background-size: cover; background-position: bottom;">
+      <%#= image_tag @event.photo, id: "banner-img", alt: "banner", width: 100%>
+      <div class="banner-text-event">
+        <h1 class="banner-headers">Chef <%= @event.chef.name %></h1>
+        <%= link_to "Book this event", event_path(@event), class: "btn yellow-btn event-btn" %>
       </div>
-      <!-- Add icon library -->
-
-
-      <p>Your host for this evening will be Gabriela Sanchez, a compatriot of Joaquim, who has been living in Berlin for 14 years. She has hosted a total of five events with Dining Room.<p>
-      </div>
-
-      <!-- need a btn reserve this event  -->
-      <!-- need a btn next event -->
     </div>
 
-    <div class="container mb-5">
-      <div class="row">
-        <div class="col-6">
-          <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
-            Book this event
-          </button>
+    <div class="container">
+      <h2>About Joaquim Alvarez</h2>
+      <div class="event-card">
+        <div class="text-card-right">
+          <!-- Image chef -->
+          <p>Joaquim was born in 1985 in Barcelona and as a young boy he used to help his grandparents at the family farm during his summer holidays. </p>
+          <br>
+          <p>That was when he fell in love with food, while helping grow the produce and then learn how to best used them to create the most delicious and simple recipes.</p>
+          <br>
+          <p>His childohood has defined his style as a chef. He has traveled the world, and learned with the locals, how to make the best traditional and in-season dishes.</p>
         </div>
-        <div class="col-6">
-          <%= link_to "Next event", @event, class: "btn black-btn float-right" %>
+        <%= image_tag "louis-hansel.jpg", id: "louis-hansel-img", alt: "chef", width: 200%>
+        <div id="event-date">
+          <i class="fas fa-calendar-alt color-yellow" id="date-event-show"></i>
+          <p id="p-date-show"><%= @event.date.strftime("%d of %B, %Y") %></p>
+        </div>
+
+        <!-- ----------------------------------------------------- -->
+        <h2>About <%= @event.chef.name %></h2>
+
+        <h2>About the Menu</h2>
+        <div class="event-card">
+          <%= image_tag "menu.jpg", id: "menu-img", alt: "menu", width: 200%>
+          <div class="text-card-left">
+            <p>This evening you will be served a menu that will take you on a journey to beautiful Spanish countryside. The simple but rich flavours of olive oil, tomato and the best beef cut will be paired with a beautiful red wine from the region of Penedès, one hour away from Barcelona. This was one of the first dishes Joaquim perfected with his grandmother. Appetiser and deseart will be a surpising complemente to the main star of the show. </p>
+            <!-- needs a see the menu btn -->
+          </div>
+          <div class="event-card">
+            <div class="text-card-right">
+              <!-- Image chef -->
+              <p><%= @event.chef.description %></p>
+            </div>
+            <%= image_tag "louis-hansel.jpg", id: "louis-hansel-img", alt: "chef", width: 200%>
+          </div>
+
+          <!-- ----------------------------------------------------- -->
+          <h2>About the Menu</h2>
+          <div class="event-card">
+            <%= image_tag "menu.jpg", id: "menu-img", alt: "menu", width: 200%>
+            <div class="text-card-left">
+              <p>This evening you will be served a menu that will take you on a journey to beautiful Spanish countryside.</p>
+              <p>The simple but rich flavours of olive oil, tomato and the best beef cut will be paired with a beautiful red wine from the region of Penedès, one hour away from Barcelona.</p>
+              <p>This was one of the first dishes Joaquim perfected with his grandmother. Appetiser and deseart will be a surpising complemente to the main star of the show. </p>
+              <!-- Menu button -->
+            </div>
+          </div>
+
+          <!-- ----------------------------------------------------- -->
+          <h2>About the venue</h2>
+          <div class="event-card">
+            <%= image_tag "olive.jpg", id: "olive-img", alt: "olive", width: 200%>
+            <div class="text-card-left">
+              <div class="container-stars">
+                <h2>Gabriela Sanchez</h2>
+                <!-- star code -->
+                <i class="far fa-star checked"></i>
+                <i class="far fa-star checked"></i>
+                <i class="far fa-star checked"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <!-- Add icon library -->
+
+
+              <p>Your host for this evening will be Gabriela Sanchez, a compatriot of Joaquim, who has been living in Berlin for 14 years. She has hosted a total of five events with Dining Room.<p>
+              </div>
+
+              <!-- need a btn reserve this event  -->
+              <!-- need a btn next event -->
+            </div>
+            <div id="star-set">
+              <i class="far fa-star checked"></i>
+              <i class="far fa-star checked"></i>
+              <i class="far fa-star checked"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+          <p>Your host for this evening will be Gabriela Sanchez, a compatriot of Joaquim.</p>
+          <p> Gabriela has been living in Berlin for 14 years and she has hosted a total of five events with Dining Room.<p>
+          </div>
+          <!-- need a btn reserve this event  -->
+          <!-- need a btn next event -->
         </div>
       </div>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
+        Book this event
+      </button>
+
       <!-- Modal -->
       <div class="container">
-
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-6">
-                   <p> <%= @event.chef.name %>
-                    <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
+        <div class="container mb-5">
+          <div class="row">
+            <div class="col-6">
+              <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
+                Book this event
+              </button>
+            </div>
+            <div class="col-6">
+              <%= link_to "Next event", @event, class: "btn black-btn float-right" %>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div class="container">
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-6">
+                       <p> <%= @event.chef.name %>
+                        <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
+                      </div>
 
-                  <div class="col-6">
-                    <p>Total cost:</p>
+                      <div class="col-6">
+                        <p>Total cost:</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                       <%= render 'bookings/form', booking: @booking %>
+                     </div>
+                     <div class="col-6" id="event-price" data-price="<%= @event.price %>">
+                      <%= @event.price %> EUR
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                   <%= render 'bookings/form', booking: @booking %>
-                 </div>
-                 <div class="col-6" id="event-price" data-price="<%= @event.price %>">
-                  <%= @event.price %> EUR
                 </div>
               </div>
             </div>
@@ -107,5 +157,3 @@
         </div>
       </div>
     </div>
-  </div>
-</div>

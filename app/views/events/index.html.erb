@@ -24,8 +24,8 @@
                 <h2><%= event.chef.name %></h2>
                 <p><%= event.description %></p>
                 <div id="date-container">
-                  <i class="fas fa-calendar-alt color-yellow", id="icon-position"></i>
-                  <p id="p-position"><%= event.date %></p>
+                  <i class="fas fa-calendar-alt color-yellow"></i>
+                  <p class="p-position"><%= event.date.strftime("%d of %B, %Y") %></p>
                 </div>
                 <%= link_to "Find out more", '#', class: "btn yellow-btn", id: "btn-position" %>
               </div>
