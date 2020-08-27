@@ -1,3 +1,6 @@
+<!-- BOOTSTRAP MODAL BOOKING -->
+
+
 <!-- Here goes the navbar-->
 <div class="banner">
   <div class="container banner-text">
@@ -52,7 +55,48 @@
 
         <p>Your host for this evening will be Gabriela Sanchez, a compatriot of Joaquim, who has been living in Berlin for 14 years. She has hosted a total of five events with Dining Room.<p>
       </div>
+
            <!-- need a btn reserve this event  -->
            <!-- need a btn next event -->
     </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
+  Book this event
+</button>
+
+<!-- Modal -->
+<div class="container">
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6">
+         <p> <%= @event.chef.name %>
+          <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
+       </div>
+
+       <div class="col-6">
+        <p>Total cost:</p>
+       </div>
+       </div>
+       <div class="row">
+        <div class="col-6">
+       <%= render 'bookings/form', booking: @booking %>
+       </div>
+       <div class="col-6" id="event-price" data-price="<%= @event.price %>">
+          <%= @event.price %> EUR
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 </div>

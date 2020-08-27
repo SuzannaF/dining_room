@@ -68,6 +68,17 @@
   justify-content: center;
 }
 
+
+.event-image-book {
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  height: 160px;
+  width: 100%;
+}
+
 .left-card-about {
   padding-left: 32px;
 }
+
