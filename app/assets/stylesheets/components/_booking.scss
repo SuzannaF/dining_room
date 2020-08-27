@@ -1,5 +1,13 @@
-.Gabriela {
-  padding-right: 500px;
-  padding-top: 60px;
+.emojis {
+  padding-top: 20px;
+  text-align: justify;
+  float:left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.right {
+  padding-left: 50px;
+  padding-top: 15px;
   text-align: justify;
 }
