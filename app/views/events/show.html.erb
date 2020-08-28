@@ -66,8 +66,18 @@
           Book this event
         </button>
       </div>
+
+      <% unless @events.first == @event %>
       <div class="col-6">
-        <%= link_to "Next event", event_path(@event.id = 2), class: "btn black-btn float-right" %>
+        <%= link_to "Previous event", event_path(@event.id - 1), class: "btn black-btn float-right previous-button" %>
+      </div>
+      <% end %>
+      <% unless @events.last == @event %>
+      <div class="col-6 ">
+        <p> <%= link_to "Next event", event_path(@event.id + 1), class: "btn black-btn float-right next-button" %> </p>
+      </div>
+      <% end %>
+
       </div>
     </div>
     <!-- Modal -->
