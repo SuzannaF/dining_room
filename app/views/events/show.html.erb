@@ -1,7 +1,7 @@
 <!-- navbar -->
 <div class="banner-event" style="background: url(<%= url_for(@event.photo) %>); background-size: cover; background-position: bottom;">
   <div class="banner-text-event">
-    <h1 class="banner-headers">Chef <%= @event.chef.name %></h1>
+    <h1 class="<%= params[:id] == "2" ? 'banner-headers-white' : 'banner-headers' %>">Chef <%= @event.chef.name %></h1>
     <%= link_to "Book this event", event_path(@event), class: "btn yellow-btn event-btn" %>
   </div>
 </div>
