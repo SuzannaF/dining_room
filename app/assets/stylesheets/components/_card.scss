@@ -33,6 +33,12 @@
   padding-left: 50px;
 }
 
+.container-stars {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .text-card-left {
   padding-left: 43px;
   text-align: justify;
@@ -41,9 +47,4 @@
 .text-card-right {
   padding-right: 43px;
   text-align: justify;
-}
-
-#star-set {
-  position: relative;
-  left: 79px;
 }
