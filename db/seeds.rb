@@ -34,21 +34,21 @@ chef_one = Chef.new(
 chef_one.photo.attach(io: file, filename: 'alvarez.jpg', content_type: 'image/jpg')
 chef_one.save!
 
-file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449570/niki-nakayama_xg7zfw.gif')
+file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598605227/BN-EA253_mag091_FR_20140807164948_xrjpf1.jpg')
 chef_two = Chef.new(
   name: "Niki Nakayama",
   description: "Niki was born in Japan, in Tokyo. She moved with her family to Europe when she was a teenager. Despite having spent most of her live in Europe, it was through food, japanese traditional food, that her family kept the conection to her heritage. She has hopened one the most prestigious japanese restaurants here in Berlin and it’s our great pleasure to have her at Dining Room for the first time this evening.",
   )
-chef_two.photo.attach(io: file, filename: 'nakayama.gif', content_type: 'image/gif')
+chef_two.photo.attach(io: file, filename: 'niki-nakayama.gif', content_type: 'image/gif')
 chef_two.save!
 
-# file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449570/marcus_samuelsson_zrhcbu.jpg')
-# chef_three = Chef.new(
-#   name: "Marcus Samuelsson",
-#   description: "Niki was born in Japan, in Tokyo. She moved with her family to Europe when she was a teenager. Despite having spent most of her live in Europe, it was through food, japanese traditional food, that her family kept the conection to her heritage. She has hopened one the most prestigious japanese restaurants here in Berlin and it’s our great pleasure to have her at Dining Room for the first time this evening.",
-#   )
-# chef_three.photo.attach(io: file, filename: 'samuelsson.jpg', content_type: 'image/jpg')
-# chef_three.save!
+file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449570/marcus_samuelsson_zrhcbu.jpg')
+chef_three = Chef.new(
+  name: "Marcus Samuelsson",
+  description: "Niki was born in Japan, in Tokyo. She moved with her family to Europe when she was a teenager. Despite having spent most of her live in Europe, it was through food, japanese traditional food, that her family kept the conection to her heritage. She has hopened one the most prestigious japanese restaurants here in Berlin and it’s our great pleasure to have her at Dining Room for the first time this evening.",
+  )
+chef_three.photo.attach(io: file, filename: 'samuelsson.jpg', content_type: 'image/jpg')
+chef_three.save!
 
   # ------------ USER SEEDS
 
@@ -92,7 +92,7 @@ chef_two.save!
   event_one.photo.attach(io: file, filename: 'spanish-image.jpg', content_type: 'image/jpg')
   event_one.save!
 
-  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/jap-image_ys3hpp.jpg')
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/cody-chan-FyerbLWRr2M-unsplash_ra6eop.jpg')
   event_two = Event.new(
     address: "Linienstraße 75, 10119 Berlin",
     date: date_two,
@@ -102,41 +102,41 @@ chef_two.save!
     user: user_two,
     chef: chef_two
     )
-  event_two.photo.attach(io: file, filename: 'jap-image.jpg', content_type: 'image/jpg')
+  event_two.photo.attach(io: file, filename: 'jap-banner-image.jpg', content_type: 'image/jpg')
   event_two.save!
 
-  event_three = Event.new(
-    address: "Brunnenstraße 3, 10119 Berlin",
-    date: date_three,
-    description: "Niki was born in Japan, in Tokyo. She moved with her family to Europe when she was a teenager. Despite having spent most of her live in Europe, it was through food, japanese traditional food, that her family kept the conection to her heritage. She has hopened one the most prestigious japanese restaurants here in Berlin and it’s our great pleasure to have her at Dining Room for the first time this evening.",
-    price: 65,
-    capacity: rand(5..20),
-    user: user_one,
-    chef: chef_two
-    )
-  event_three.save!
+  # event_three = Event.new(
+  #   address: "Brunnenstraße 3, 10119 Berlin",
+  #   date: date_three,
+  #   description: "Niki was born in Japan, in Tokyo. She moved with her family to Europe when she was a teenager. Despite having spent most of her live in Europe, it was through food, japanese traditional food, that her family kept the conection to her heritage. She has hopened one the most prestigious japanese restaurants here in Berlin and it’s our great pleasure to have her at Dining Room for the first time this evening.",
+  #   price: 65,
+  #   capacity: rand(5..20),
+  #   user: user_one,
+  #   chef: chef_two
+  #   )
+  # event_three.save!
 
   # ------------ BOOKING SEEDS
 
-  puts "Creating bookings..."
+  # puts "Creating bookings..."
 
-  booking = Booking.new(
-    number_people: rand(1..2),
-    user: user_one,
-    event: event_three
-    )
-  booking.save!
+  # booking = Booking.new(
+  #   number_people: rand(1..2),
+  #   user: user_one,
+  #   event: event_three
+  #   )
+  # booking.save!
 
-  # ------------ REVIEW SEEDS
+  # # ------------ REVIEW SEEDS
 
-  puts "Creating reviews..."
+  # puts "Creating reviews..."
 
-  review = Review.new(
-    comment: "Our host Serena was amazing, everything was set up perfectly. Chef Joachim Alvarez food was cooked to perfection.",
-    rating: 5,
-    booking: booking
-    )
-  review.save!
+  # review = Review.new(
+  #   comment: "Our host Serena was amazing, everything was set up perfectly. Chef Joachim Alvarez food was cooked to perfection.",
+  #   rating: 5,
+  #   booking: booking
+  #   )
+  # review.save!
 
   # ------------ MENU SEEDS
 
