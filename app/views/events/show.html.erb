@@ -42,41 +42,41 @@
     <div class="text-card-left">
       <div class="container-stars">
         <h2>Gabriela Sanchez</h2>
-         <div id="star-set">
-            <i class="far fa-star checked"></i>
-            <i class="far fa-star checked"></i>
-            <i class="far fa-star checked"></i>
-            <i class="far fa-star"></i>
+        <div id="star-set">
+          <i class="far fa-star checked"></i>
+          <i class="far fa-star checked"></i>
+          <i class="far fa-star checked"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <div>
+          <p>Your host for this evening will be Gabriela Sanchez, a compatriot of Joaquim.</p>
+          <p> Gabriela has been living in Berlin for 14 years and she has hosted a total of five events with Dining Room.<p>
           </div>
-          <div>
-            <p>Your host for this evening will be Gabriela Sanchez, a compatriot of Joaquim.</p>
-            <p> Gabriela has been living in Berlin for 14 years and she has hosted a total of five events with Dining Room.<p>
-          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Modal -->
-<div class="container">
-  <div class="container mb-5">
-    <div class="row">
-      <div class="col-6">
-        <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
-          Book this event
-        </button>
-      </div>
+  <!-- Modal -->
+  <div class="container">
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-6">
+          <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
+            Book this event
+          </button>
+        </div>
 
-      <% unless @events.first == @event %>
-      <div class="col-6">
-        <%= link_to "Previous event", event_path(@event.id - 1), class: "btn black-btn float-right previous-button" %>
-      </div>
-      <% end %>
-      <% unless @events.last == @event %>
-      <div class="col-6 ">
-        <p> <%= link_to "Next event", event_path(@event.id + 1), class: "btn black-btn float-right next-button" %> </p>
-      </div>
-      <% end %>
+        <% unless @events.first == @event %>
+        <div class="col-6">
+          <%= link_to "Previous event", event_path(@event.id - 1), class: "btn black-btn float-right previous-button" %>
+        </div>
+        <% end %>
+        <% unless @events.last == @event %>
+        <div class="col-6 ">
+          <p> <%= link_to "Next event", event_path(@event.id + 1), class: "btn black-btn float-right next-button" %> </p>
+        </div>
+        <% end %>
 
       </div>
     </div>
@@ -95,20 +95,21 @@
               <div class="row">
                 <div class="col-6">
                   <p> <%= @event.chef.name %>
-                  <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
-                </div>
+                    <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
+                  </div>
 
-                <div class="col-6">
-                  <p>Total cost:</p>
+                  <div class="col-6">
+                    <p>Total cost:</p>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                <%= render 'bookings/form', booking: @booking %>
-              </div>
-              <div class="col-6" id="event-price" data-price="<%= @event.price %>">
-                <%= @event.price %> EUR
-              </div>
+                <div class="row">
+                  <div class="col-6">
+                    <%= render 'bookings/form', booking: @booking %>
+                  </div>
+                  <div class="col-6" id="event-price" data-price="<%= @event.price %>">
+                    <%= @event.price %> EUR
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -116,4 +117,3 @@
       </div>
     </div>
   </div>
-</div>
