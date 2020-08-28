@@ -6,6 +6,10 @@
   </div>
 </div>
 
+<% @bookings.each do |booking| %>
+  <%=  booking.event.description %>
+<% end %>
+
 <div class="container">
   <div class="event-card">
     <div class="col-3">

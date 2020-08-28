@@ -20,7 +20,7 @@
       <!-- Image chef -->
       <p><%= @event.chef.description %></p>
     </div>
-    <%= image_tag "louis-hansel.jpg", id: "louis-hansel-img", alt: "chef", width: 200%>
+    <%= cl_image_tag @event.chef.photo.key, id: "menu-img" %>
   </div>
 
   <!-- ----------------------------------------------------- -->
