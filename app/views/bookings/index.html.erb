@@ -1,82 +1,83 @@
 <!-- Here goes the navbar-->
-<div class="banner">
-  <div class="container banner-text">
-    <h1 class="header-show">Upcoming bookings </h1>
-    <i class="fas fa-calendar-alt color-yellow"></i>
+<div class="banner-bookings">
+  <div class="banner-text-bookings">
+    <h1 class="banner-headers">My Bookings</h1>
   </div>
 </div>
 
 <div class="container">
+  <h1 class="header-show">Upcoming bookings</h1>
   <div class="event-card">
     <div class="col-3">
       <%= image_tag "louis-hansel.jpg", id: "louis-hansel-img", alt: "chef", width: 200%>
     </div>
     <div class="right col-9">
-      <h2>Chef Joaquim Alvarez</h2>
-      <h3>Host: Gabriela Sanchez</h3>
+      <h2>Chef bla bla bla</h2>
+      <!-- <h2>Chef <%#= bookings.where(current_user).event.chef.name %></h2> -->
+      <p>Host: Gabriela Sanchez</p>
       <div class="d-flex justify-content-between">
         <div>
           <div class="emojis">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center emoji-padding">
               <i class="far fa-calendar-check color-yellow"></i>
-              <p class="ml-2 mb-0"> September 19, 2020</p>
+              <!-- This needs to be dinamic -->
+              <p class="ml-2 mb-0">September 19, 2020</p>
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center emoji-padding">
               <i class="fas fa-map-marker-alt color-yellow"></i>
-              <p class="ml-2 mb-0"> Street name</p>
+              <p class="ml-2 mb-0">Nollendorfstraße 27, 10777 Berlin</p>
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center emoji-padding">
               <i class="far fa-user color-yellow"></i>
-              <p class="ml-2 mb-0"> Number of guests: 2</p>
+              <p class="ml-2 mb-0">Number of guests: 1</p>
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center emoji-padding">
               <i class="fas fa-euro-sign color-yellow"></i>
-              <p class="ml-2 mb-0"> Price per guest: 50€</p>
+              <p class="ml-2 mb-0">Price per guest: 50€</p>
             </div>
           </div>
         </div>
         <!-- here goes the btn for upcoming bookings-->
-        <%= link_to "see details", "#", class: "btn yellow-btn low-btn", id: "btn-position" %>
+        <%= link_to "Edit your booking", "#", class: "btn yellow-btn low-btn"%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="header-show">Past bookings</h1>
+  <div class="event-card">
+    <%= image_tag "fish.jpg", id: "fish-img", alt: "chef", width: 200%>
+    <div>
+      <div class="right">
+        <h2>Chef Pierre Monplanet</h2>
+        <p>Host: Luisa Kern</p>
+        <div>
+          <div class="d-flex justify-content-between">
+            <div class="emojis">
+              <div class="d-flex align-items-center emoji-padding">
+                <i class="far fa-calendar-check color-yellow"></i>
+                <p class="ml-2 mb-0">August 22, 2020</p>
+              </div>
+              <div class="d-flex align-items-center emoji-padding">
+                <i class="fas fa-map-marker-alt color-yellow"></i>
+                <p class="ml-2 mb-0">Rykestraße 13, 10405 Berlin</p>
+              </div>
+              <div class="d-flex align-items-center emoji-padding">
+                <i class="far fa-user color-yellow"></i>
+                <p class="ml-2 mb-0">Number of guests: 2</p>
+              </div>
+              <div class="d-flex align-items-center emoji-padding">
+                <i class="fas fa-euro-sign color-yellow"></i>
+                <p class="ml-2 mb-0">Price per guest: 40€</p>
+              </div>
+            </div>
+            <!-- here goes the btn for upcoming bookings-->
+            <%= link_to "Add a review", "#", class: "btn yellow-btn low-btn", id: "btn-position-b" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-<div>
-
-  <div class="container">
-  <h1 class="header-show"> Past bookings </h1>
-  <div class="event-card">
-    <%= image_tag "fish.jpg", id: "fish-img", alt: "chef", width: 200%>
-      <div>
-        <div class="right">
-        <h2>Chef xxx</h2>
-        <h3>Host: xxx</h3>
-          <div>
-            <div>
-              <div class="emojis">
-                <div class="d-flex align-items-center">
-                  <i class="far fa-calendar-check color-yellow"></i>
-                  <p class="ml-2 mb-0"> August 22, 2020</p>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="fas fa-map-marker-alt color-yellow"></i>
-                  <p class="ml-2 mb-0"> Street name</p>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="far fa-user color-yellow"></i>
-                  <p class="ml-2 mb-0"> Number of guests: 4</p>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="fas fa-euro-sign color-yellow"></i>
-                  <p class="ml-2 mb-0"> Price per guest: 40€</p>
-                </div>
-              </div>
-            <!-- here goes the btn for upcoming bookings-->
-            </div>
-
-          </div>
-        </div>
-      </div>
-  </div>
 </div>
-</div>
+
