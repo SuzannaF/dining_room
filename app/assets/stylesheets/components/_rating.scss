@@ -1,8 +1,10 @@
-// stars
+// SHOW EVENT - Rating stars
 .checked {
-  color: orange;
+  color: $yellow;
 }
-.container-stars{
-  display: flex;
-  padding-top: 10px;
+
+#star-set {
+  position: relative;
+  left: 340px;
+  bottom: 39px;
 }
