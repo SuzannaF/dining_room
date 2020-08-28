@@ -8,21 +8,42 @@
   object-fit: cover;
   width:230px;
   height:230px;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 #menu-img{
   object-fit: cover;
   width:230px;
   height:230px;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #louis-hansel-img{
   object-fit: cover;
   width:230px;
   height:257px;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #fish-img{
   object-fit: cover;
   width:230px;
   height:257px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.event-image {
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+  border-style: none;
+
+  &-book {
+    border-radius: 7px;
+    margin-bottom: 10px;
+    height: 160px;
+    width: 100%;
+  }
 }
