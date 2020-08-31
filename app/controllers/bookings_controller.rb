@@ -1,6 +1,15 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
+
+    # RETRIEVE THE DATE OF THE EVENT, REFERENT TO THE BOOKING
+    @joined_tables = Event.joins(:bookings)
+    @joined_tables.where("events.date >= ?", Date.new).each do |f|
+      @future_bookings = @bookings.where(event: f)
+    end
+    @joined_tables.where("events.date < ?", Date.new).each do |f|
+      @past_bookings = @bookings.where(event: f)
+    end
   end
 
   def create
