@@ -39,11 +39,18 @@
   object-position: 50% 50%;
   overflow: hidden;
   border-style: none;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
   &-book {
-    border-radius: 7px;
+    border-radius: 3px;
     margin-bottom: 10px;
     height: 160px;
     width: 100%;
   }
+}
+
+.index-border {
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
