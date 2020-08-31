@@ -21,3 +21,12 @@
 @import "components/footer";
 @import "components/rating" ;
 @import "components/booking" ;
+
+// On Show page there was an extra space on the rigth ??
+body {
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}

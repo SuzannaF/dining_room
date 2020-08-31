@@ -7,46 +7,46 @@
 
 <div class="container">
   <h1 class="header-show">Upcoming bookings</h1>
-  <div class="event-card">
-    <div class="col-3">
-      <%= image_tag "louis-hansel.jpg", id: "louis-hansel-img", alt: "chef", width: 200%>
-    </div>
-    <div class="right col-9">
-      <!-- Need to change this to dynamic -->
-      <%#= @bookings.event.chef.name %>
-      <div>
-        <h2>Chef Joachim Alvarez</h2>
-        <div class="line"></div>
-        <p>Host: Gabriela Sanchez</p>
+  <% @bookings.each do |booking| %>
+    <div class="event-card">
+      <div class="col-3">
+        <%= image_tag "louis-hansel.jpg", id: "louis-hansel-img", alt: "chef", width: 200%>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="right col-9">
         <div>
-          <div class="emojis">
-            <div class="d-flex align-items-center emoji-padding">
-              <i class="far fa-calendar-check color-yellow"></i>
-              <!-- This needs to be dinamic -->
-              <p class="ml-2 mb-0">September 25, 2020</p>
-            </div>
-            <div class="d-flex align-items-center emoji-padding">
-              <i class="fas fa-map-marker-alt color-yellow"></i>
-              <p class="ml-2 mb-0">Nollendorfstraße 27, 10777 Berlin</p>
-            </div>
-            <div class="d-flex align-items-center emoji-padding">
-              <i class="far fa-user color-yellow"></i>
-              <p class="ml-2 mb-0">Number of guests: 1</p>
-            </div>
-            <div class="d-flex align-items-center emoji-padding">
-              <i class="fas fa-euro-sign color-yellow"></i>
-              <p class="ml-2 mb-0">Price per guest: 80€</p>
+          <h2>Chef <%= booking.event.chef.name %></h2>
+          <div class="line"></div>
+          <p>Host: Gabriela Sanchez</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div>
+            <div class="emojis">
+              <div class="d-flex align-items-center emoji-padding">
+                <i class="far fa-calendar-check color-yellow"></i>
+                <!-- This needs to be dinamic -->
+                <p class="ml-2 mb-0"><%= booking.event.date.strftime("%d of %B, %Y") %></p>
+              </div>
+              <div class="d-flex align-items-center emoji-padding">
+                <i class="fas fa-map-marker-alt color-yellow"></i>
+                <p class="ml-2 mb-0"><%= booking.event.address %></p>
+              </div>
+              <div class="d-flex align-items-center emoji-padding">
+                <i class="far fa-user color-yellow"></i>
+                <p class="ml-2 mb-0">Number of guests: <%= booking.number_people %></p>
+              </div>
+              <div class="d-flex align-items-center emoji-padding">
+                <i class="fas fa-euro-sign color-yellow"></i>
+                <p class="ml-2 mb-0">Total price: 80€</p>
+              </div>
             </div>
           </div>
+          <!-- here goes the btn for upcoming bookings-->
+          <%= render 'reviews/form', review: @review %>
+          <%= link_to "Edit your booking", "#", class: "btn yellow-btn low-btn"%>
         </div>
-        <!-- here goes the btn for upcoming bookings-->
-       <%= render 'reviews/form', review: @review %>
-        <%= link_to "Edit your booking", "#", class: "btn yellow-btn low-btn"%>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
 <div class="container">

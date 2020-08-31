@@ -1,8 +1,8 @@
-<!-- navbar -->
+<!-- Banner-->
 <div class="banner-event" style="background: url(<%= url_for(@event.photo) %>); background-size: cover; background-position: bottom;">
   <div class="banner-text-event">
     <h1 class="<%= params[:id] == "2" ? 'banner-headers-white' : 'banner-headers' %>">Chef <%= @event.chef.name %></h1>
-    <%= link_to "Book this event", event_path(@event), class: "btn yellow-btn event-btn" %>
+    <%= link_to "Book this event", event_path(@event), class: "btn yellow-btn banner-btn" %>
   </div>
 </div>
 
@@ -10,7 +10,7 @@
 <div class="container">
   <div id="event-date">
     <i class="fas fa-calendar-alt color-yellow" id="date-event-show"></i>
-    <p id="p-date-show"><%= @event.date.strftime("%d of %B, %Y") %></p>
+    <p><%= @event.date.strftime("%d of %B, %Y") %></p>
   </div>
 
   <!-- ----------------------------------------------------- -->
@@ -20,7 +20,7 @@
       <!-- Image chef -->
       <p><%= @event.chef.description %></p>
     </div>
-    <%= cl_image_tag @event.chef.photo.key, id: "menu-img", class: "event-image-book" %>
+    <%= cl_image_tag @event.chef.photo.key, id: "chef-img", class: "event-image-book" %>
   </div>
 
   <!-- ----------------------------------------------------- -->
@@ -32,6 +32,48 @@
       <p>The simple but rich flavours of olive oil, tomato and the best beef cut will be paired with a beautiful red wine from the region of Penedès, one hour away from Barcelona.</p>
       <p>This was one of the first dishes Joaquim perfected with his grandmother. Appetiser and deseart will be a surpising complemente to the main star of the show. </p>
       <!-- Menu button -->
+      <!-- Button trigger modal -->
+      <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#exampleModalCenter">
+        See the menu
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLongTitle">Menu</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Appetizer -->
+              <%= cl_image_tag @event.menu.dishes.where(name: "Appetizer")[0].photo.key, class: "event-image-menu", alt: "Appetizer" %>
+              <div class="event-info-menu-right">
+                <h2><%= @event.menu.dishes.where(name: "Appetizer")[0].name %></h2>
+                <p><%= @event.menu.dishes.where(name: "Appetizer")[0].description %></p>
+              </div>
+              <!-- Main Course -->
+              <%= cl_image_tag  @event.menu.dishes.where(name: "Main Course")[0].photo.key, id: "event-image-menu", alt: "Main Course" %>
+              <div id="event-info-menu-left">
+                <h2><%= @event.menu.dishes.where(name: "Main Course")[0].name %></h2>
+                <p><%= @event.menu.dishes.where(name: "Main Course")[0].description %></p>
+              </div>
+              <!-- Dessert -->
+              <%= cl_image_tag @event.menu.dishes.where(name: "Dessert")[0].photo.key, class: "event-image-menu", alt: "Dessert" %>
+              <div class="event-info-menu-right">
+                <h2><%= @event.menu.dishes.where(name: "Dessert")[0].name %></h2>
+                <p><%= @event.menu.dishes.where(name: "Dessert")[0].description %></p>
+              </div>
+            </div>
+            <!-- We don't need a button or a footer here -->
+            <!-- <div class="modal-footer"> -->
+              <!-- <button type="button" class="btn black-btn" data-dismiss="modal">Close</button> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

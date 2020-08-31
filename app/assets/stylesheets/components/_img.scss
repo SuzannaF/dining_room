@@ -1,4 +1,17 @@
+// EVENT - Index
+
+// Added a height so the picture is the same size as the other two
+#second-slide-img {
+  height: 316px;
+}
+
+// EVENT - Show
 #chef-img {
+  object-fit: cover;
+  width: 230px;
+  height: 230px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #people-img {
@@ -6,15 +19,16 @@
 
 #olive-img{
   object-fit: cover;
-  width:230px;
-  height:230px;
+  width: 230px;
+  height: 230px;
   border-radius: 3px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
 #menu-img{
   object-fit: cover;
-  width:230px;
-  height:230px;
+  width: 230px;
+  height: 249px;
   border-radius: 3px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
@@ -53,4 +67,23 @@
 .index-border {
   border-radius: 3px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+// EVENT SHOW - MENU
+.event-image-menu {
+  width: 122px;
+  height: 170px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  position: relative;
+  left: 20px;
+}
+
+#event-image-menu {
+  width: 122px;
+  height: 170px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  position: relative;
+  right: -335px;
 }
