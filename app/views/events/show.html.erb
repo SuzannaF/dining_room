@@ -64,9 +64,11 @@
   <div class="container mb-5">
     <div class="row">
       <div class="col-6">
+
         <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
           Book this event
         </button>
+
       </div>
 
       <% unless @events.first == @event %>
@@ -100,15 +102,13 @@
                   <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
                 </div>
 
-                <div class="col-6">
+                <div class="col-6 body-booking">
                   <p class="text-booking">
-                    <strong class="text-booking-date">Date:</strong>
-                    <br>
+                    <i class="far fa-calendar-check color-yellow"></i>
                     <%= @event.date.strftime("%d of %B, %Y") %>
                   </p>
                   <p class="text-booking">
-                    <strong class="text-booking-date">Location:</strong>
-                    <br>
+                    <i class="fas fa-map-marker-alt color-yellow"></i>
                     <%= @event.address %>
                   </p>
                   <p>Total cost:</p>
@@ -124,7 +124,7 @@
               </div>
               <div class="row">
                 <div class="col-12">
-                   <%= link_to "Book", root_path, class: "btn btn-book yellow-btn w-100"%>
+                   <%= link_to "Book", event_bookings_path(@event.bookings), class: "btn btn-book yellow-btn w-100"%>
                 </div>
               </div>
             </div>

@@ -7,6 +7,10 @@
 
 }
 
+.modal-header {
+  border-bottom: 3px solid $yellow;
+}
+
 .modal-title {
   font-weight: 400;
   font-size: 20px;
@@ -21,7 +25,14 @@
   font-weight: 600;
   font-size: 25px;
   margin-bottom: 0;
+  padding: 0px;
+  margin-bottom: 6px;
 
+
+}
+
+.body-booking {
+  padding: none;
 }
 
 .text-booking {
