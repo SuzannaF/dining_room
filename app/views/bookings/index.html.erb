@@ -42,6 +42,7 @@
           </div>
         </div>
         <!-- here goes the btn for upcoming bookings-->
+       <%= render 'reviews/form', review: @review %>
         <%= link_to "Edit your booking", "#", class: "btn yellow-btn low-btn"%>
       </div>
     </div>
@@ -78,6 +79,11 @@
                 <i class="fas fa-euro-sign color-yellow"></i>
                 <p class="ml-2 mb-0">Price per guest: 40€</p>
               </div>
+            </div>
+            <div>
+
+
+
             </div>
             <!-- here goes the btn for upcoming bookings-->
             <%= link_to "Add a review", "#", class: "btn yellow-btn low-btn", id: "btn-position-b" %>

@@ -1,4 +1,8 @@
 <div class="form">
   <%= simple_form_for [ @booking, @review ] do |f| %>
-
-end
+    <%= f.input :rating %>
+    <%= f.input :comment %>
+    <%= f.submit "Review" %>
+    <!-- do I need a review.new here? -->
+  <% end %>
+</div>
