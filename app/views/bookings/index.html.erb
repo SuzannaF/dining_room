@@ -7,7 +7,7 @@
 
 <div class="container">
   <h1 class="header-show">Upcoming bookings</h1>
-  <% @bookings.each do |booking| %>
+  <% @future_bookings.each do |booking| %>
     <div class="event-card">
       <div class="col-3">
         <%= image_tag "louis-hansel.jpg", id: "louis-hansel-img", alt: "chef", width: 200%>
@@ -40,8 +40,9 @@
               </div>
             </div>
           </div>
-          <!-- here goes the btn for upcoming bookings-->
+          <!-- rendering form ro create a review -->
           <%= render 'reviews/form', review: @review %>
+          <!-- here goes the btn to edit the booking -->
           <%= link_to "Edit your booking", "#", class: "btn yellow-btn low-btn"%>
         </div>
       </div>
