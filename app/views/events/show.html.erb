@@ -2,7 +2,7 @@
 <div class="banner-event" style="background: url(<%= url_for(@event.photo) %>); background-size: cover; background-position: bottom;">
   <div class="banner-text-event">
     <h1 class="<%= params[:id] == "2" ? 'banner-headers-white' : 'banner-headers' %>">Chef <%= @event.chef.name %></h1>
-    <button type="button" class="btn yellow-btn event-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
+    <button type="button" class="btn yellow-btn event-btn banner-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
       Book this event
     </button>
   </div>

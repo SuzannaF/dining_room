@@ -105,51 +105,55 @@ chef_three.save!
   event_two.photo.attach(io: file, filename: 'jap-banner-image.jpg', content_type: 'image/jpg')
   event_two.save!
 
-  # event_three = Event.new(
-  #   address: "Brunnenstraße 3, 10119 Berlin",
-  #   date: date_three,
-  #   description: "Niki was born in Japan, in Tokyo. She moved with her family to Europe when she was a teenager. Despite having spent most of her live in Europe, it was through food, japanese traditional food, that her family kept the conection to her heritage. She has hopened one the most prestigious japanese restaurants here in Berlin and it’s our great pleasure to have her at Dining Room for the first time this evening.",
-  #   price: 65,
-  #   capacity: rand(5..20),
-  #   user: user_one,
-  #   chef: chef_two
-  #   )
-  # event_three.save!
+  event_three = Event.new(
+    address: "Brunnenstraße 3, 10119 Berlin",
+    date: date_three,
+    description: "From Stockholm, Sweden, we are proud to present top chef Marcus Samuelsson.",
+    price: 65,
+    capacity: rand(5..20),
+    user: user_three,
+    chef: chef_three
+    )
+  event_three.save!
 
-  # ------------ BOOKING SEEDS
+  #------------ BOOKING SEEDS
 
-  # puts "Creating bookings..."
+  puts "Creating bookings..."
 
-  # booking = Booking.new(
-  #   number_people: rand(1..2),
-  #   user: user_one,
-  #   event: event_three
-  #   )
-  # booking.save!
+  booking = Booking.new(
+    number_people: rand(1..2),
+    user: user_one,
+    event: event_three
+    )
+  booking.save!
 
-  # # ------------ REVIEW SEEDS
+  # ------------ REVIEW SEEDS
 
-  # puts "Creating reviews..."
+  puts "Creating reviews..."
 
-  # review = Review.new(
-  #   comment: "Our host Serena was amazing, everything was set up perfectly. Chef Joachim Alvarez food was cooked to perfection.",
-  #   rating: 5,
-  #   booking: booking
-  #   )
-  # review.save!
+  review = Review.new(
+    comment: "Our host Serena was amazing, everything was set up perfectly. Chef Joachim Alvarez food was cooked to perfection.",
+    rating: 5,
+    booking: booking
+    )
+  review.save!
 
   # ------------ MENU SEEDS
 
   puts "Creating menus..."
 
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449575/pexels-cottonbro-4253320_iwszqy.jpg')
   menu_one = Menu.new(
     event: event_one
     )
+  menu_one.photo.attach(io: file, filename: 'menu1.jpg', content_type: 'image/jpg')
   menu_one.save!
 
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/jap-image_ys3hpp.jpg')
   menu_two = Menu.new(
     event: event_two
     )
+  menu_two.photo.attach(io: file, filename: 'menu2.jpg', content_type: 'image/jpg')
   menu_two.save!
 
   # ------------ DISH SEEDS
@@ -184,6 +188,37 @@ chef_three.save!
     )
   dish_dessert.photo.attach(io: file, filename: 'churros.jpg', content_type: 'image/jpg')
   dish_dessert.save!
+
+  # ------------ DISH SEEDS - MENU TWO
+
+  # file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449567/chase-daley-mFfLHPr6ZZs-unsplash_tposkt.jpg')
+  # dish_appetizer = Dish.new(
+  #   name: "Appetizer",
+  #   description: "Smoked tortilla made with organic free-range eggs, topped with a secret spice mix.",
+  #   menu: menu_one
+  #   )
+  # dish_appetizer.photo.attach(io: file, filename: 'tortilla.jpg', content_type: 'image/jpg')
+  # dish_appetizer.save!
+
+  # file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449575/pexels-cottonbro-4253320_iwszqy.jpg')
+  # dish_main = Dish.new(
+  #   name: "Main Course",
+  #   description: "Sirloin barbeque grilled, beautifully charred , served with a take on patatas bravas, golden on the outside and soft on the inside, sprinkled with fresh herbs.",
+  #   image: "https://images.unsplash.com/photo-1595519516956-9d085ab1cd50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+  #   menu: menu_one
+  #   )
+  # dish_main.photo.attach(io: file, filename: 'sirloin.jpg', content_type: 'image/jpg')
+  # dish_main.save!
+
+  # file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449566/bantersnaps-tdDRh4lQga0-unsplash_ljsjbm.jpg')
+  # dish_dessert = Dish.new(
+  #   name: "Dessert",
+  #   description: "Warm churros filed with vanilla icecream, sprinkled with sugar and cinamon, served together with a flowerless chocolate cake and fresh strawberries.",
+  #   image: "https://images.unsplash.com/photo-1595519516956-9d085ab1cd50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+  #   menu: menu_one
+  #   )
+  # dish_dessert.photo.attach(io: file, filename: 'churros.jpg', content_type: 'image/jpg')
+  # dish_dessert.save!
 
 
   puts "Done!"
