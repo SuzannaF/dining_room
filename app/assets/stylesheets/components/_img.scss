@@ -11,6 +11,7 @@
   border-radius: 3px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
 #menu-img{
   object-fit: cover;
   width:230px;
@@ -53,4 +54,23 @@
 .index-border {
   border-radius: 3px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+// MENU - Show page Evenets
+.event-image-menu {
+  width: 122px;
+  height: 170px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  position: relative;
+  left: 20px;
+}
+
+#event-image-menu {
+  width: 122px;
+  height: 170px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  position: relative;
+  right: -335px;
 }
