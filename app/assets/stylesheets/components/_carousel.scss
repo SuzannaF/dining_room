@@ -1,4 +1,5 @@
-// INDEX - UPCOMING EVENTS
+// EVENST - Index - UPCOMING EVENTS
+
 // Give a colour black to the arrows inside the carousel
 .color-black {
   filter: invert(1);
@@ -49,7 +50,7 @@
 }
 
 // --------------------------------------------------
-// INDEX - ABOUT DINING ROOM
+// EVENTS - Index - ABOUT DINING ROOM
 
 // Move the link arrows to the edges of the card:
 .arrow-prev {
@@ -66,6 +67,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  p {
+    padding-top: 20px;
+  }
 }
 
 
