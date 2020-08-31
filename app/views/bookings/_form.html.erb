@@ -1,5 +1,5 @@
 <div class="form">
   <%= simple_form_for [ @event, @booking ] do |f| %>
-  <%= f.input :number_people, id: "number-people" %>
+  <%= f.input :number_people, :label => "Number of people", :required => false, id: "number-people" %>
   <% end %>
 </div>

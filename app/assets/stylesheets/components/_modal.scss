@@ -4,11 +4,13 @@
 }
 
 .modal-body {
-
+  padding-top: 0px;
 }
 
 .modal-header {
-  border-bottom: 3px solid $yellow;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 3px solid rgba(232,188,1, 0.4);
 }
 
 .modal-title {
@@ -26,19 +28,46 @@
   font-size: 25px;
   margin-bottom: 0;
   padding: 0px;
-  margin-bottom: 6px;
+  margin: 6px;
 
 
 }
 
 .body-booking {
-  padding: none;
+
+
 }
 
 .text-booking {
-  margin-top: 10px;
+  margin-bottom: 10px;
 
-  &-text {
-    margin-bottom: 10px;
+  &-date {
+    margin-top: 38px;
   }
 }
+
+#event-price {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 100px;
+  width:248px;
+  height:86px;
+  border-top: 2px solid rgba(232,188,1, 0.4);
+}
+
+.total-cost {
+  line-height: 124px;
+  height: 62px;
+  width: 248px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text-eur {
+  color: $yellow;
+}
+
+
+
+
+
