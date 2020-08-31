@@ -110,6 +110,11 @@
                 <%= @event.price %> EUR
               </div>
               </div>
+              <div class="row">
+                <div col-12>
+                   <%= link_to "Book", event_bookings_path(current_user.bookings) class: "btn btn-warning btn-book w-100"%>
+                </div>
+              </div>
             </div>
           </div>
         </div>
