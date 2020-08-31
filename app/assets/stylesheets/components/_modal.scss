@@ -1,0 +1,73 @@
+.modal-content {
+  border-radius: 3px;
+  width: 500px;
+}
+
+.modal-body {
+  padding-top: 0px;
+}
+
+.modal-header {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 3px solid rgba(232,188,1, 0.4);
+}
+
+.modal-title {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.card-booking {
+
+}
+
+.chef-title {
+  padding: 5px 0px;
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 0;
+  padding: 0px;
+  margin: 6px;
+
+
+}
+
+.body-booking {
+
+
+}
+
+.text-booking {
+  margin-bottom: 10px;
+
+  &-date {
+    margin-top: 38px;
+  }
+}
+
+#event-price {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 100px;
+  width:248px;
+  height:86px;
+  border-top: 2px solid rgba(232,188,1, 0.4);
+}
+
+.total-cost {
+  line-height: 124px;
+  height: 62px;
+  width: 248px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text-eur {
+  color: $yellow;
+}
+
+
+
+
+

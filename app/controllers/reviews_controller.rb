@@ -9,13 +9,15 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def new
-    @review = review.new
+  def update
+    @review = Review.find(params[:id])
+    @review.update(review_params)
+    redirect_to_booking_path(@review.booking)
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:number_people)
+    params.require(:review).permit(:rating, :comment)
   end
 end
