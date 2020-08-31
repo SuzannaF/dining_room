@@ -1,4 +1,4 @@
-// INDEX BANNER - events
+// EVENTS - Index Banner
 .banner-index {
   background-image: url("https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2852&q=80");
   background-size: cover;
@@ -31,14 +31,9 @@
   word-spacing: 10px;
 }
 
-.banner-headers-white {
-  font-weight: 600;
-  font-size: 80px;
-  word-spacing: 10px;
-  color: white;
-}
 
-// SHOW BANNER - events
+// --------------------------------------------------------------------------
+// EVENTS - Show Banner
 .banner-event {
   // background-image: url("main_banner.jpg");
   background-size: cover;
@@ -51,18 +46,20 @@
   margin-bottom: 50px;
 }
 
+.banner-headers-white {
+  font-weight: 600;
+  font-size: 80px;
+  word-spacing: 10px;
+  color: white;
+}
+
 .banner-text-event {
   text-align: left;
   position: relative;
   left: -140px;
 }
 
-.event-btn {
-  position: relative;
-  bottom: -55px;
-  left: 866px;
-}
-
+// --------------------------------------------------------------------------
 // BOOKINGS BANNER
 .banner-bookings {
   background-image: url("https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2852&q=80");

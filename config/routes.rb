@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   # For bookings I only added create as we are creating an instance
   # inside the show page (like swimming pools)
   resources :events, only: [:index, :show] do
-    resources :bookings, only: [:index, :create]
+    resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:show] do
+  resources :bookings, only: [:show, :index] do
     resources :reviews, only: [:create]
   end
 end
