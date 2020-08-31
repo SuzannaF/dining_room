@@ -2,7 +2,9 @@
 <div class="banner-event" style="background: url(<%= url_for(@event.photo) %>); background-size: cover; background-position: bottom;">
   <div class="banner-text-event">
     <h1 class="<%= params[:id] == "2" ? 'banner-headers-white' : 'banner-headers' %>">Chef <%= @event.chef.name %></h1>
-    <%= link_to "Book this event", event_path(@event), class: "btn yellow-btn event-btn" %>
+    <button type="button" class="btn yellow-btn event-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
+          Book this event
+        </button>
   </div>
 </div>
 
@@ -93,12 +95,22 @@
             </div>
             <div class="modal-body">
               <div class="row">
-                <div class="col-6">
-                  <p> <%= @event.chef.name %>
+                <div class="col-6 card-booking">
+                  <p class="chef-title"> <%= @event.chef.name %> </p>
                   <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
                 </div>
 
                 <div class="col-6">
+                  <p class="text-booking">
+                    <strong class="text-booking-date">Date:</strong>
+                    <br>
+                    <%= @event.date.strftime("%d of %B, %Y") %>
+                  </p>
+                  <p class="text-booking">
+                    <strong class="text-booking-date">Location:</strong>
+                    <br>
+                    <%= @event.address %>
+                  </p>
                   <p>Total cost:</p>
                 </div>
               </div>
@@ -111,8 +123,8 @@
               </div>
               </div>
               <div class="row">
-                <div col-12>
-                   <%= link_to "Book", event_bookings_path(current_user.bookings) class: "btn btn-warning btn-book w-100"%>
+                <div class="col-12">
+                   <%= link_to "Book", root_path, class: "btn btn-book yellow-btn w-100"%>
                 </div>
               </div>
             </div>
