@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user: current_user)
+    @review = Review.new
 
     # RETRIEVE THE DATE OF THE EVENT, REFERENT TO THE BOOKING
     @joined_tables = Event.joins(:bookings)
