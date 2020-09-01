@@ -50,29 +50,27 @@
               </button>
             </div>
             <div class="modal-body">
-              <!-- Appetizer -->
-              <%= cl_image_tag @event.menu.dishes.where(name: "Appetizer")[0].photo.key, class: "event-image-menu", alt: "Appetizer" %>
-              <div class="event-info-menu-right">
-                <h2><%= @event.menu.dishes.where(name: "Appetizer")[0].name %></h2>
-                <p><%= @event.menu.dishes.where(name: "Appetizer")[0].description %></p>
-              </div>
-              <!-- Main Course -->
-              <%= cl_image_tag  @event.menu.dishes.where(name: "Main Course")[0].photo.key, id: "event-image-menu", alt: "Main Course" %>
-              <div id="event-info-menu-left">
-                <h2><%= @event.menu.dishes.where(name: "Main Course")[0].name %></h2>
-                <p><%= @event.menu.dishes.where(name: "Main Course")[0].description %></p>
-              </div>
-              <!-- Dessert -->
-              <%= cl_image_tag @event.menu.dishes.where(name: "Dessert")[0].photo.key, class: "event-image-menu", alt: "Dessert" %>
-              <div class="event-info-menu-right">
-                <h2><%= @event.menu.dishes.where(name: "Dessert")[0].name %></h2>
-                <p><%= @event.menu.dishes.where(name: "Dessert")[0].description %></p>
-              </div>
+              <% @events.each do |event| %>
+                <!-- Appetizer -->
+                <%= cl_image_tag event.menu.dishes.find_by(name: "Appetizer").photo.key, class: "event-image-menu", alt: "Appetizer" %>
+                <div class="event-info-menu-right">
+                  <h2><%= event.menu.dishes.find_by(name: "Appetizer").name %></h2>
+                  <p><%= event.menu.dishes.find_by(name: "Appetizer").description %></p>
+                </div>
+                <!-- Main Course -->
+                <%= cl_image_tag event.menu.dishes.find_by(name: "Main Course").photo.key, id: "event-image-menu", alt: "Main Course" %>
+                <div id="event-info-menu-left">
+                  <h2><%= event.menu.dishes.find_by(name: "Main Course").name %></h2>
+                  <p><%= event.menu.dishes.find_by(name: "Main Course").description %></p>
+                </div>
+                <!-- Dessert -->
+                <%= cl_image_tag event.menu.dishes.find_by(name: "Dessert").photo.key, class: "event-image-menu", alt: "Dessert" %>
+                <div class="event-info-menu-right">
+                  <h2><%= event.menu.dishes.find_by(name: "Dessert").name %></h2>
+                  <p><%= event.menu.dishes.find_by(name: "Dessert").description %></p>
+                </div>
+              <% end %>
             </div>
-            <!-- We don't need a button or a footer here -->
-            <!-- <div class="modal-footer"> -->
-              <!-- <button type="button" class="btn black-btn" data-dismiss="modal">Close</button> -->
-            <!-- </div> -->
           </div>
         </div>
       </div>
