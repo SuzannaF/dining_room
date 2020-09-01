@@ -5,20 +5,20 @@ class ReviewsController < ApplicationController
     @review.booking = @booking
 
     if @review.save
-      redirect_to_booking_path(@booking)
+      redirect_to bookings_path
     end
   end
 
   def update
     @review = Review.find(params[:id])
     @review.update(review_params)
-    redirect_to_booking_path(@review.booking)
+    redirect_to bookings_path
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to_booking_path(@booking)
+    redirect_to bookings_path
   end
 
   private
