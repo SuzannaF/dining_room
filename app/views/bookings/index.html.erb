@@ -63,7 +63,6 @@
                     <p class="chef-title"> <%= booking.event.chef.name %> </p>
                     <%= cl_image_tag booking.event.chef.photo.key, class: "event-image-book" %>
                   </div>
-
                   <div class="col-6 body-booking">
                     <p class="text-booking-date">
                       <i class="far fa-calendar-check color-yellow"></i>
@@ -76,7 +75,6 @@
                     <p class="total-cost">Total cost:</p>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-6">
                     <%= render 'bookings/form', booking: booking, event: booking.event %>
@@ -106,53 +104,54 @@
         <div class="right col-9">
           <div>
             <h2>Chef <%= booking.event.chef.name %></h2>
-              <div class="line"></div>
+            <div class="line"></div>
             <p>Host: Gabriela Sanchez</p>
           </div>
-        <div class="d-flex justify-content-between">
-          <div>
-            <div class="emojis">
-              <div class="d-flex align-items-center emoji-padding">
-                <i class="far fa-calendar-check color-yellow"></i>
-                <!-- This needs to be dinamic -->
-                <p class="ml-2 mb-0"><%= booking.event.date.strftime("%d of %B, %Y") %></p>
+          <div class="d-flex justify-content-between">
+            <div>
+              <div class="emojis">
+                <div class="d-flex align-items-center emoji-padding">
+                  <i class="far fa-calendar-check color-yellow"></i>
+                  <!-- This needs to be dinamic -->
+                  <p class="ml-2 mb-0"><%= booking.event.date.strftime("%d of %B, %Y") %></p>
+                </div>
+                <div class="d-flex align-items-center emoji-padding">
+                  <i class="fas fa-map-marker-alt color-yellow"></i>
+                  <p class="ml-2 mb-0"><%= booking.event.address %></p>
+                </div>
+                <div class="d-flex align-items-center emoji-padding">
+                  <i class="far fa-user color-yellow"></i>
+                  <p class="ml-2 mb-0">Number of guests: <%= booking.number_people %></p>
+                </div>
+                <div class="d-flex align-items-center emoji-padding">
+                  <i class="fas fa-euro-sign color-yellow"></i>
+                  <p class="ml-2 mb-0">Total price: <%= booking.event.price * booking.number_people %> €</p>
+                </div>
               </div>
-              <div class="d-flex align-items-center emoji-padding">
-                <i class="fas fa-map-marker-alt color-yellow"></i>
-                <p class="ml-2 mb-0"><%= booking.event.address %></p>
-              </div>
-              <div class="d-flex align-items-center emoji-padding">
-                <i class="far fa-user color-yellow"></i>
-                <p class="ml-2 mb-0">Number of guests: <%= booking.number_people %></p>
-              </div>
-              <div class="d-flex align-items-center emoji-padding">
-                <i class="fas fa-euro-sign color-yellow"></i>
-                <p class="ml-2 mb-0">Total price: <%= booking.event.price * booking.number_people %> €</p>
-              </div>
-            </div>
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#review">
-              Add a review
-            </button>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#review">
+                Add a review
+              </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add a Review</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <!-- Make sure rating on the form has a limit of 1 to 5 -->
-                    <%= render 'reviews/form', review: @review, booking: booking %>
-                  </div>
-                  <div class="modal-footer">
-                    <!-- When you click on this btn the rating will be displayed on the event card -->
-                    <button type="button" class="btn btn-primary">Save changes</button>
+              <!-- Modal -->
+              <div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Add a Review</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Make sure rating on the form has a limit of 1 to 5 -->
+                      <%= render 'reviews/form', review: @review, booking: booking %>
+                    </div>
+                    <div class="modal-footer">
+                      <!-- When you click on this btn the rating will be displayed on the event card -->
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                   </div>
                 </div>
               </div>

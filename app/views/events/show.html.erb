@@ -8,24 +8,22 @@
   </div>
 </div>
 
-
 <div class="container">
   <div id="event-date">
     <i class="fas fa-calendar-alt color-yellow" id="date-event-show"></i>
     <p><%= @event.date.strftime("%d of %B, %Y") %></p>
   </div>
 
-  <!-- ----------------------------------------------------- -->
+  <!-- ---------------------------------------------------- -->
   <h2>About <%= @event.chef.name %></h2>
   <div class="event-card">
     <div class="text-card-right">
-      <!-- Image chef -->
       <p><%= @event.chef.description %></p>
     </div>
     <%= cl_image_tag @event.chef.photo.key, id: "chef-img", class: "event-image-book" %>
   </div>
 
-  <!-- ----------------------------------------------------- -->
+  <!------------------------------------------------------- -->
   <h2>About the Menu</h2>
   <div class="event-card">
     <%= image_tag "menu.jpg", id: "menu-img", alt: "menu", width: 200%>
@@ -33,7 +31,6 @@
       <p>This evening you will be served a menu that will take you on a journey to beautiful Spanish countryside.</p>
       <p>The simple but rich flavours of olive oil, tomato and the best beef cut will be paired with a beautiful red wine from the region of Penedès, one hour away from Barcelona.</p>
       <p>This was one of the first dishes Joaquim perfected with his grandmother. Appetiser and deseart will be a surpising complemente to the main star of the show. </p>
-      <!-- Menu button -->
       <!-- Button trigger modal -->
       <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#menu">
         See the menu
@@ -76,7 +73,7 @@
   </div>
 
   <!-- ----------------------------------------------------- -->
-    <h2>About the venue</h2>
+  <h2>About the venue</h2>
   <div class="event-card">
     <%= image_tag "olive.jpg", id: "olive-img", alt: "olive", width: 200%>
     <div class="text-card-left">
@@ -106,7 +103,6 @@
           Book this event
         </button>
       </div>
-
       <% unless @future_events.first == @event %>
         <div class="col-6">
           <%= link_to "Previous event", event_path(@event.id - 1), class: "btn black-btn float-right previous-button" %>
@@ -119,43 +115,42 @@
       <% end %>
     </div>
 
-  <!-- Modal -->
-  <div class="container">
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-6 card-booking">
-                <p class="chef-title"> <%= @event.chef.name %> </p>
-                <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
-              </div>
-
-              <div class="col-6 body-booking">
-                <p class="text-booking-date">
-                  <i class="far fa-calendar-check color-yellow"></i>
-                  <%= @event.date.strftime("%d of %B, %Y") %>
-                </p>
-                <p class="text-booking">
-                  <i class="fas fa-map-marker-alt color-yellow"></i>
-                  <%= @event.address %>
-                </p>
-                <p class="total-cost">Total cost:</p>
-              </div>
+    <!-- Modal -->
+    <div class="container">
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-
-            <div class="row">
-              <div class="col-6">
-                <%= render 'bookings/form', booking: @booking, event: @event %>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-6 card-booking">
+                  <p class="chef-title"> <%= @event.chef.name %> </p>
+                  <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
+                </div>
+                <div class="col-6 body-booking">
+                  <p class="text-booking-date">
+                    <i class="far fa-calendar-check color-yellow"></i>
+                    <%= @event.date.strftime("%d of %B, %Y") %>
+                  </p>
+                  <p class="text-booking">
+                    <i class="fas fa-map-marker-alt color-yellow"></i>
+                    <%= @event.address %>
+                  </p>
+                  <p class="total-cost">Total cost:</p>
+                </div>
               </div>
-              <div class="col-6" id="event-price" data-price="<%= @event.price %>">
-                <%= @event.price %> <span class="text-eur">EUR</span>
+              <div class="row">
+                <div class="col-6">
+                  <%= render 'bookings/form', booking: @booking, event: @event %>
+                </div>
+                <div class="col-6" id="event-price" data-price="<%= @event.price %>">
+                  <%= @event.price %> <span class="text-eur">EUR</span>
+                </div>
               </div>
             </div>
           </div>
