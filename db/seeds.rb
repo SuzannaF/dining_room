@@ -161,64 +161,60 @@ chef_three.save!
   puts "Creating dishes..."
 
   file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449567/chase-daley-mFfLHPr6ZZs-unsplash_tposkt.jpg')
-  dish_appetizer = Dish.new(
+  dish_appetizer_one = Dish.new(
     name: "Appetizer",
     description: "Smoked tortilla made with organic free-range eggs, topped with a secret spice mix.",
     menu: menu_one
     )
-  dish_appetizer.photo.attach(io: file, filename: 'tortilla.jpg', content_type: 'image/jpg')
-  dish_appetizer.save!
+  dish_appetizer_one.photo.attach(io: file, filename: 'tortilla.jpg', content_type: 'image/jpg')
+  dish_appetizer_one.save!
 
   file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449575/pexels-cottonbro-4253320_iwszqy.jpg')
-  dish_main = Dish.new(
+  dish_main_one = Dish.new(
     name: "Main Course",
     description: "Sirloin barbeque grilled, beautifully charred , served with a take on patatas bravas, golden on the outside and soft on the inside, sprinkled with fresh herbs.",
-    image: "https://images.unsplash.com/photo-1595519516956-9d085ab1cd50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
     menu: menu_one
     )
-  dish_main.photo.attach(io: file, filename: 'sirloin.jpg', content_type: 'image/jpg')
-  dish_main.save!
+  dish_main_one.photo.attach(io: file, filename: 'sirloin.jpg', content_type: 'image/jpg')
+  dish_main_one.save!
 
   file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449566/bantersnaps-tdDRh4lQga0-unsplash_ljsjbm.jpg')
-  dish_dessert = Dish.new(
+  dish_dessert_one = Dish.new(
     name: "Dessert",
     description: "Warm churros filed with vanilla icecream, sprinkled with sugar and cinamon, served together with a flowerless chocolate cake and fresh strawberries.",
-    image: "https://images.unsplash.com/photo-1595519516956-9d085ab1cd50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
     menu: menu_one
     )
-  dish_dessert.photo.attach(io: file, filename: 'churros.jpg', content_type: 'image/jpg')
-  dish_dessert.save!
+  dish_dessert_one.photo.attach(io: file, filename: 'churros.jpg', content_type: 'image/jpg')
+  dish_dessert_one.save!
 
   # ------------ DISH SEEDS - MENU TWO
 
-  # file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449567/chase-daley-mFfLHPr6ZZs-unsplash_tposkt.jpg')
-  # dish_appetizer = Dish.new(
-  #   name: "Appetizer",
-  #   description: "Smoked tortilla made with organic free-range eggs, topped with a secret spice mix.",
-  #   menu: menu_one
-  #   )
-  # dish_appetizer.photo.attach(io: file, filename: 'tortilla.jpg', content_type: 'image/jpg')
-  # dish_appetizer.save!
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598947127/sticksnsushi-sushi-restaurant-tiergarten-4.1485427308_lmm2be.jpg')
+  dish_appetizer_two = Dish.new(
+    name: "Appetizer",
+    description: "Rich salmon belly shake toro nigiri, flying fish roe tobiko",
+    menu: menu_one
+    )
+  dish_appetizer_two.photo.attach(io: file, filename: 'pre-sushi.jpg', content_type: 'image/jpg')
+  dish_appetizer_two.save!
 
-  # file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449575/pexels-cottonbro-4253320_iwszqy.jpg')
-  # dish_main = Dish.new(
-  #   name: "Main Course",
-  #   description: "Sirloin barbeque grilled, beautifully charred , served with a take on patatas bravas, golden on the outside and soft on the inside, sprinkled with fresh herbs.",
-  #   image: "https://images.unsplash.com/photo-1595519516956-9d085ab1cd50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-  #   menu: menu_one
-  #   )
-  # dish_main.photo.attach(io: file, filename: 'sirloin.jpg', content_type: 'image/jpg')
-  # dish_main.save!
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598947122/menu_x1xewv.jpg')
+  dish_main_two = Dish.new(
+    name: "Main Course",
+    description: "Sirloin barbeque grilled, beautifully charred , served with a take on patatas bravas, golden on the outside and soft on the inside, sprinkled with fresh herbs.",
+    menu: menu_one
+    )
+  dish_main_two.photo.attach(io: file, filename: 'main-sushi.jpg', content_type: 'image/jpg')
+  dish_main_two.save!
 
-  # file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449566/bantersnaps-tdDRh4lQga0-unsplash_ljsjbm.jpg')
-  # dish_dessert = Dish.new(
-  #   name: "Dessert",
-  #   description: "Warm churros filed with vanilla icecream, sprinkled with sugar and cinamon, served together with a flowerless chocolate cake and fresh strawberries.",
-  #   image: "https://images.unsplash.com/photo-1595519516956-9d085ab1cd50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-  #   menu: menu_one
-  #   )
-  # dish_dessert.photo.attach(io: file, filename: 'churros.jpg', content_type: 'image/jpg')
-  # dish_dessert.save!
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598947221/19642558_10155382424227988_292004789617907262_n_1_e6jbsn.jpg')
+  dish_dessert_two = Dish.new(
+    name: "Dessert",
+    description: "Warm churros filed with vanilla icecream, sprinkled with sugar and cinamon, served together with a flowerless chocolate cake and fresh strawberries.",
+    menu: menu_one
+    )
+  dish_dessert_two.photo.attach(io: file, filename: 'sushi-dessert.jpg', content_type: 'image/jpg')
+  dish_dessert_two.save!
 
 
   puts "Done!"
