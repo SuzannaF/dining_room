@@ -122,7 +122,7 @@ chef_three.save!
 
   booking = Booking.new(
     number_people: rand(1..2),
-    user: user_one,
+    user: user_three,
     event: event_three
     )
   booking.save!
