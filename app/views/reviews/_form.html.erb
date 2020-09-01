@@ -1,8 +1,8 @@
 <div class="form">
   <%= simple_form_for [ booking, review ] do |f| %>
     <%= f.input :rating , collection: 1..5 %>
+    <%= f.input :rating_host , collection: 1..5 %>
     <%= f.input :comment %>
-    <%= f.submit "Review" %>
-    <!-- do I need a review.new here? -->
+    <%= f.submit "Review", class: "btn yellow-btn btn-book w-100" %>
   <% end %>
 </div>
