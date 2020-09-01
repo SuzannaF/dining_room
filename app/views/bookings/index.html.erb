@@ -42,7 +42,7 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn yellow-btn low-btn" id="edit-btn-position" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
+          <button type="button" class="btn yellow-btn low-btn" id="edit-btn-future" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
             Edit your booking
           </button>
         </div>
@@ -96,10 +96,9 @@
   <h1 class="header-show">Past bookings</h1>
   <% if @past_bookings != nil %>
     <% @past_bookings.each do |booking| %>
-      <div class="event-card">
+      <div class="event-card-booking">
         <div class="col-3">
-          <!-- Need to change the picture of the chef -->
-          <%= image_tag "louis-hansel.jpg", id: "louis-hansel-img", alt: "chef", width: 200%>
+          <%= cl_image_tag booking.event.chef.photo.key, id: "chef-img-booking"%>
         </div>
         <div class="right col-9">
           <div>
@@ -130,7 +129,7 @@
               </div>
 
               <!-- Button add a review -->
-              <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#review">
+              <button type="button" class="btn black-btn" id="edit-btn-past" data-toggle="modal" data-target="#review">
                 Add a review
               </button>
 
