@@ -94,7 +94,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Buttons Book / Previews and Next -->
 <div class="container">
   <div class="container mb-5">
     <div class="row">
@@ -114,57 +114,44 @@
         </div>
       <% end %>
     </div>
+  </div>
+</div>
 
-    <!-- Modal -->
-    <div class="container">
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+<!-- Modal -->
+<div class="container">
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6 card-booking">
+              <p class="chef-title"> <%= @event.chef.name %> </p>
+              <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
             </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-6 card-booking">
-                  <p class="chef-title"> <%= @event.chef.name %> </p>
-                  <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
-                </div>
-                <div class="col-6 body-booking">
-                  <p class="text-booking-date">
-                    <i class="far fa-calendar-check color-yellow"></i>
-                    <%= @event.date.strftime("%d of %B, %Y") %>
-                  </p>
-                  <p class="text-booking">
-                    <i class="fas fa-map-marker-alt color-yellow"></i>
-                    <%= @event.address %>
-                  </p>
-                  <p class="total-cost">Total cost:</p>
-                </div>
-            <% end %>
+            <div class="col-6 body-booking">
+              <p class="text-booking-date">
+                <i class="far fa-calendar-check color-yellow"></i>
+                <%= @event.date.strftime("%d of %B, %Y") %>
+              </p>
+              <p class="text-booking">
+                <i class="fas fa-map-marker-alt color-yellow"></i>
+                <%= @event.address %>
+              </p>
+              <p class="total-cost">Total cost:</p>
+            </div>
           </div>
-
-      <!-- Modal -->
-      <div class="container">
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <%= render 'bookings/form', booking: @booking, event: @event %>
-                </div>
-                <div class="col-6" id="event-price" data-price="<%= @event.price %>">
-                  <%= @event.price %> <span class="text-eur">EUR</span>
-                </div>
-              </div>
+          <div class="row">
+            <div class="col-6">
+              <%= render 'bookings/form', booking: @booking, event: @event %>
+            </div>
+            <div class="col-6" id="event-price" data-price="<%= @event.price %>">
+              <%= @event.price %> <span class="text-eur">EUR</span>
             </div>
           </div>
         </div>
@@ -172,4 +159,3 @@
     </div>
   </div>
 </div>
-
