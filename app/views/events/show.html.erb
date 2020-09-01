@@ -72,106 +72,100 @@
             <!-- We don't need a button or a footer here -->
             <!-- <div class="modal-footer"> -->
               <!-- <button type="button" class="btn black-btn" data-dismiss="modal">Close</button> -->
-            <!-- </div> -->
+              <!-- </div> -->
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ----------------------------------------------------- -->
-  <h2>About the venue</h2>
-  <div class="event-card">
-    <%= image_tag "olive.jpg", id: "olive-img", alt: "olive", width: 200%>
-    <div class="text-card-left">
-      <div class="container-stars">
-        <h2>Gabriela Sanchez</h2>
-        <div id="star-set">
-          <i class="far fa-star checked"></i>
-          <i class="far fa-star checked"></i>
-          <i class="far fa-star checked"></i>
-          <i class="far fa-star"></i>
-        </div>
-        <div>
-          <p>Your host for this evening will be Gabriela Sanchez, a compatriot of Joaquim.</p>
-          <p> Gabriela has been living in Berlin for 14 years and she has hosted a total of five events with Dining Room.<p>
+    <!-- ----------------------------------------------------- -->
+    <h2>About the venue</h2>
+    <div class="event-card">
+      <%= image_tag "olive.jpg", id: "olive-img", alt: "olive", width: 200%>
+      <div class="text-card-left">
+        <div class="container-stars">
+          <h2>Gabriela Sanchez</h2>
+          <div id="star-set">
+            <i class="far fa-star checked"></i>
+            <i class="far fa-star checked"></i>
+            <i class="far fa-star checked"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div>
+            <p>Your host for this evening will be Gabriela Sanchez, a compatriot of Joaquim.</p>
+            <p> Gabriela has been living in Berlin for 14 years and she has hosted a total of five events with Dining Room.<p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Modal -->
-<div class="container">
-  <div class="container mb-5">
-    <div class="row">
-      <div class="col-6">
-        <% if @booking_completed  %>
-          <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
-            Edit
-          </button>
-        <% else %>
-          <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
-            Book this event
-          </button>
-        <% end %>
-      </div>
-
-      <% unless @events.first == @event %>
-        <div class="col-6">
-          <%= link_to "Previous event", event_path(@event.id - 1), class: "btn black-btn float-right previous-button" %>
-        </div>
-      <% end %>
-      <% unless @events.last == @event %>
-        <div class="col-6 ">
-          <p> <%= link_to "Next event", event_path(@event.id + 1), class: "btn black-btn float-right next-button" %> </p>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="container">
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+    <!-- Modal -->
+    <div class="container">
+      <div class="container mb-5">
+        <div class="row">
+          <div class="col-6">
+            <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#exampleModalCenter" id="button-price">
+              Book this event
             </button>
           </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-6 card-booking">
-                <p class="chef-title"> <%= @event.chef.name %> </p>
-                <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
-              </div>
 
-              <div class="col-6 body-booking">
-                <p class="text-booking-date">
-                  <i class="far fa-calendar-check color-yellow"></i>
-                  <%= @event.date.strftime("%d of %B, %Y") %>
-                </p>
-                <p class="text-booking">
-                  <i class="fas fa-map-marker-alt color-yellow"></i>
-                  <%= @event.address %>
-                </p>
-                <p class="total-cost">Total cost:</p>
-              </div>
-            </div>
+          <% unless @events.first == @event %>
+          <div class="col-6">
+            <%= link_to "Previous event", event_path(@event.id - 1), class: "btn black-btn float-right previous-button" %>
+          </div>
+          <% end %>
+          <% unless @events.last == @event %>
+          <div class="col-6 ">
+            <p> <%= link_to "Next event", event_path(@event.id + 1), class: "btn black-btn float-right next-button" %> </p>
+          </div>
+          <% end %>
+        </div>
+      </div>
 
-            <div class="row">
-              <div class="col-6">
-                <%= render 'bookings/form', booking: @booking, event: @event %>
+      <!-- Modal -->
+      <div class="container">
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <div class="col-6" id="event-price" data-price="<%= @event.price %>">
-                <%= @event.price %> <span class="text-eur">EUR</span>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-6 card-booking">
+                    <p class="chef-title"> <%= @event.chef.name %> </p>
+                    <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
+                  </div>
+
+                  <div class="col-6 body-booking">
+                    <p class="text-booking-date">
+                      <i class="far fa-calendar-check color-yellow"></i>
+                      <%= @event.date.strftime("%d of %B, %Y") %>
+                    </p>
+                    <p class="text-booking">
+                      <i class="fas fa-map-marker-alt color-yellow"></i>
+                      <%= @event.address %>
+                    </p>
+                    <p class="total-cost">Total cost:</p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <%= render 'bookings/form', booking: @booking, event: @event %>
+                  </div>
+                  <div class="col-6" id="event-price" data-price="<%= @event.price %>">
+                    <%= @event.price %> <span class="text-eur">EUR</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
