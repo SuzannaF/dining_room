@@ -12,5 +12,13 @@ class EventsController < ApplicationController
     @booking = Booking.new
     @booking_completed = Booking.where(user_id: current_user.id, event_id: @event.id)
     @future_events = @events.select { |event| event.date >= Time.now }
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @events.geocoded.map do |flat|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+      }
+    end
   end
 end
