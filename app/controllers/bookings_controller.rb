@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
     # @joined_tables = Event.joins(:bookings)
     @future_bookings = current_user.bookings.select { |booking| booking.event.date >= Date.new }
     @past_bookings = current_user.bookings.reject { |booking| booking.event.date >= Date.new }
+    raise
     # @joined_tables.where("events.date >= ?", Date.new).each do |f|
     #   @future_bookings = @bookings.where(event: f)
     # end
