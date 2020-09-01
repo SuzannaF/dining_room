@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   # 'deleted' by 'host' the bookings are also deleted
   # In the real world, we would probably include a message of warning
   # to the atendees
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   has_many :bookings, dependent: :destroy
   has_one :menu
   has_one_attached :photo
