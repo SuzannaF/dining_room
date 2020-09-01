@@ -11,5 +11,6 @@ class EventsController < ApplicationController
     @events = Event.all
     @booking = Booking.new
     @booking_completed = Booking.where(user_id: current_user.id, event_id: @event.id)
+    @future_events = @events.select { |event| event.date >= Time.now }
   end
 end
