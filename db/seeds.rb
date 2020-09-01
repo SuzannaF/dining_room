@@ -122,7 +122,7 @@ chef_three.save!
 
   booking = Booking.new(
     number_people: rand(1..2),
-    user: user_one,
+    user: user_three,
     event: event_three
     )
   booking.save!
@@ -193,7 +193,7 @@ chef_three.save!
   dish_appetizer_two = Dish.new(
     name: "Appetizer",
     description: "Rich salmon belly shake toro nigiri, flying fish roe tobiko",
-    menu: menu_one
+    menu: menu_two
     )
   dish_appetizer_two.photo.attach(io: file, filename: 'pre-sushi.jpg', content_type: 'image/jpg')
   dish_appetizer_two.save!
@@ -202,7 +202,7 @@ chef_three.save!
   dish_main_two = Dish.new(
     name: "Main Course",
     description: "Sirloin barbeque grilled, beautifully charred , served with a take on patatas bravas, golden on the outside and soft on the inside, sprinkled with fresh herbs.",
-    menu: menu_one
+    menu: menu_two
     )
   dish_main_two.photo.attach(io: file, filename: 'main-sushi.jpg', content_type: 'image/jpg')
   dish_main_two.save!
@@ -211,7 +211,7 @@ chef_three.save!
   dish_dessert_two = Dish.new(
     name: "Dessert",
     description: "Warm churros filed with vanilla icecream, sprinkled with sugar and cinamon, served together with a flowerless chocolate cake and fresh strawberries.",
-    menu: menu_one
+    menu: menu_two
     )
   dish_dessert_two.photo.attach(io: file, filename: 'sushi-dessert.jpg', content_type: 'image/jpg')
   dish_dessert_two.save!

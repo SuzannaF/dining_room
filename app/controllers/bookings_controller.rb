@@ -3,16 +3,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
     @review = Review.new
 
-    # RETRIEVE THE DATE OF THE EVENT, REFERENT TO THE BOOKING
-    # @joined_tables = Event.joins(:bookings)
-    @future_bookings = current_user.bookings.select { |booking| booking.event.date >= Date.new }
-    @past_bookings = current_user.bookings.reject { |booking| booking.event.date >= Date.new }
-    # @joined_tables.where("events.date >= ?", Date.new).each do |f|
-    #   @future_bookings = @bookings.where(event: f)
-    # end
-    # @joined_tables.where("events.date < ?", Date.new).each do |f|
-    #   @past_bookings = @bookings.where(event: f)
-    # end
+    # This logic will allows us to present the bookings in different sections
+    # depending on the date of the event
+    @future_bookings = current_user.bookings.select { |booking| booking.event.date >= Time.now }
+    @past_bookings = current_user.bookings.select { |booking| booking.event.date < Time.now }
   end
 
   def create
