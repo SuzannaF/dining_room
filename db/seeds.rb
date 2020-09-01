@@ -69,7 +69,7 @@ chef_three.save!
   user_two.save!
 
   user_three = User.new(
-    name: "Serena Wallmann",
+    name: "Tatiana Borges",
     email: Faker::Internet.email,
     password: "123456"
     )
