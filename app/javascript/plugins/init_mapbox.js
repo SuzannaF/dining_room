@@ -26,7 +26,6 @@ const initMapbox = () => {
       element.style.backgroundSize = "contain";
       element.style.width = "27px";
       element.style.height = "40px";
-      element.style.shadow = "4px 4px #888888";
 
       // Pass the element as an argument to the new marker
       new mapboxgl.Marker(element)
