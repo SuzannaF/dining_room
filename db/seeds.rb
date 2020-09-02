@@ -134,6 +134,7 @@ chef_three.save!
   review = Review.new(
     comment: "Our host Serena was amazing, everything was set up perfectly. Chef Joachim Alvarez food was cooked to perfection.",
     rating: 5,
+    rating_host: 4,
     booking: booking
     )
   review.save!
