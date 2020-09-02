@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     # depending on the date of the event
     @future_bookings = current_user.bookings.select { |booking| booking.event.date >= Time.now }
     @past_bookings = current_user.bookings.select { |booking| booking.event.date < Time.now }
-    console
   end
 
   def create
@@ -33,7 +32,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     redirect_to bookings_path
-
   end
 
   private
