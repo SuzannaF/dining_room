@@ -132,9 +132,33 @@ chef_three.save!
   puts "Creating reviews..."
 
   review = Review.new(
-    comment: "Our host Serena was amazing, everything was set up perfectly. Chef Joachim Alvarez food was cooked to perfection.",
+    comment: "Our host Lilian was amazing, everything was set up perfectly. Chef Marcus Samuelsson's food was cooked to perfection.",
     rating: 5,
     rating_host: 4,
+    booking: booking
+    )
+  review.save!
+
+  review = Review.new(
+    comment: "What an amazing experience! I loved being able to meet so many different people and eat the most incredible food.",
+    rating: 5,
+    rating_host: 5,
+    booking: booking
+    )
+  review.save!
+
+  review = Review.new(
+    comment: "The host Lilian was pure joy and Marcus's food was to die for.",
+    rating: 4,
+    rating_host: 5,
+    booking: booking
+    )
+  review.save!
+
+  review = Review.new(
+    comment: "I will definitely join more of these events, and totally recommend it to food lovers and outgoing Berliners.",
+    rating: 5,
+    rating_host: 5,
     booking: booking
     )
   review.save!
@@ -145,6 +169,7 @@ chef_three.save!
 
   file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449575/pexels-cottonbro-4253320_iwszqy.jpg')
   menu_one = Menu.new(
+    description: "This evening you will be served a menu that will take you on a journey to beautiful Spanish countryside. The simple but rich flavours of olive oil, tomato and the best beef cut will be paired with a beautiful red wine from the region of Penedès, one hour away from Barcelona. This was one of the first dishes Joaquim perfected with his grandmother. Appetiser and deseart will be a surpising complemente to the main star of the show."
     event: event_one
     )
   menu_one.photo.attach(io: file, filename: 'menu1.jpg', content_type: 'image/jpg')
@@ -152,6 +177,7 @@ chef_three.save!
 
   file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/jap-image_ys3hpp.jpg')
   menu_two = Menu.new(
+    description: "This evening you will be served a menu that will take on a journey to beautiful consmopolitan Tokyo. Sushi is one the most famous dishes of Japan, however Niki brings you an experience that you can only truly have when visiting the country of the rising sun. Niki will present to you a tasting menu of seven exquisite sushi pieces, considered a lucky number in japan, symbolizing ‘togetherness’."
     event: event_two
     )
   menu_two.photo.attach(io: file, filename: 'menu2.jpg', content_type: 'image/jpg')
@@ -190,28 +216,28 @@ chef_three.save!
 
   # ------------ DISH SEEDS - MENU TWO
 
-  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598947127/sticksnsushi-sushi-restaurant-tiergarten-4.1485427308_lmm2be.jpg')
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1599037939/luigi-pozzoli-rwLTQ7eyBx0-unsplash_kzw1nu.jpg')
   dish_appetizer_two = Dish.new(
     name: "Appetizer",
-    description: "Rich salmon belly shake toro nigiri, flying fish roe tobiko",
+    description: "Rich braised salmon belly shake toro nigiri.",
     menu: menu_two
     )
   dish_appetizer_two.photo.attach(io: file, filename: 'pre-sushi.jpg', content_type: 'image/jpg')
   dish_appetizer_two.save!
 
-  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598947122/menu_x1xewv.jpg')
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1599037937/david-todd-mccarty-6UXZI33qdfI-unsplash_jceqtv.jpg')
   dish_main_two = Dish.new(
     name: "Main Course",
-    description: "Sirloin barbeque grilled, beautifully charred , served with a take on patatas bravas, golden on the outside and soft on the inside, sprinkled with fresh herbs.",
+    description: "All seven pieces are made with seven different types of freshly caught fish and seafood.",
     menu: menu_two
     )
   dish_main_two.photo.attach(io: file, filename: 'main-sushi.jpg', content_type: 'image/jpg')
   dish_main_two.save!
 
-  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598947221/19642558_10155382424227988_292004789617907262_n_1_e6jbsn.jpg')
+  file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1599037931/mgg-vitchakorn-WOuFgV6VxlQ-unsplash_wbinaf.jpg')
   dish_dessert_two = Dish.new(
     name: "Dessert",
-    description: "Warm churros filed with vanilla icecream, sprinkled with sugar and cinamon, served together with a flowerless chocolate cake and fresh strawberries.",
+    description: "Soft vanilla cake, infused in mint and sprinkled with premium matcha powder.",
     menu: menu_two
     )
   dish_dessert_two.photo.attach(io: file, filename: 'sushi-dessert.jpg', content_type: 'image/jpg')
