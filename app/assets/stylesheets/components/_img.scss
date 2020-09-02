@@ -71,7 +71,15 @@
 }
 
 // EVENT SHOW - MENU
-.event-image-menu {
+#event-image-menu {
+  object-fit: cover;
+  width: 230px;
+  height: 249px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.event-image-dish {
   width: 122px;
   height: 170px;
   border-radius: 3px;
@@ -80,7 +88,7 @@
   left: 20px;
 }
 
-#event-image-menu {
+#event-image-dish {
   width: 122px;
   height: 170px;
   border-radius: 3px;
