@@ -130,7 +130,7 @@
 
               <!-- Button add a review -->
               <button type="button" class="btn black-btn" id="edit-btn-past" data-toggle="modal" data-target="#review">
-              <%= booking.reviews.first ? "see review" : "Add a Review" %>
+              <%= booking.review ? "See reviews" : "Add a review" %>
               </button>
 
               <!-- Modal -->
@@ -138,15 +138,20 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle"><%= booking.reviews.first ? "see review" : "Add a Review" %></h5>
+                      <h5 class="modal-title" id="exampleModalLongTitle"><%= booking.review ? "See all reviews" : "Add a review" %></h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                      <!-- Make sure rating on the form has a limit of 1 to 5 -->
-                      <%= render 'reviews/form', review: @review, booking: booking %>
-                      <!-- show the review  if else stetment -->
+                      <% if current_user.reviews.include?(booking.review)%>
+                       <% booking.event.reviews.each do |review|  %>
+                       <%= review.comment %>
+                       <%  end  %>
+                      <% else  %>
+                        <%= render 'reviews/form', review: @review, booking: booking %>
+                      <% end %>
+
                     </div>
                   </div>
                 </div>
