@@ -1,4 +1,5 @@
 // MAIN BTN
+
 .yellow-btn {
   width: 217px;
   height: 57px;
@@ -25,11 +26,13 @@
   }
 }
 
+// ----------------------------------------------
 // Override the bootstrap height
 .btn {
   line-height: 2.5;
 }
 
+// ----------------------------------------------
 // BANNER BTN
 
 .banner-btn {
@@ -39,20 +42,27 @@
 }
 
 // ----------------------------------------------
-
 .low-btn {
   align-self: flex-end;
 }
 
+// ----------------------------------------------
 // BOOKINGS BTN
+
 #btn-position-b {
   position: relative;
   bottom: -4px;
   left: -2px;
 }
 
+// BOOKING - Form
+
+.btn-book-margin {
+  margin: 21px 0px 24px 0px;
+}
+
 // -----------------------------------------------
-// INDEX - Booking
+// INDEX - Bookings
 
 #edit-btn-future {
   position: relative;
