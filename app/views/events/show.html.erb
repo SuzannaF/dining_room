@@ -29,9 +29,7 @@
     <%= cl_image_tag @event.menu.photo.key, id: "event-image-menu" %>
     <%#= image_tag "menu.jpg", id: "menu-img", alt: "menu", width: 200%>
     <div class="text-card-left">
-      <p>This evening you will be served a menu that will take you on a journey to beautiful Spanish countryside.</p>
-      <p>The simple but rich flavours of olive oil, tomato and the best beef cut will be paired with a beautiful red wine from the region of Penedès, one hour away from Barcelona.</p>
-      <p>This was one of the first dishes Joaquim perfected with his grandmother. Appetiser and deseart will be a surpising complemente to the main star of the show. </p>
+      <p id="menu-p-padding"><%= @event.menu.description %></p>
       <!-- Button trigger modal -->
       <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#menu">
         See the menu
@@ -47,7 +45,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="menu-padding">
               <!-- Appetizer -->
               <%= cl_image_tag @event.menu.dishes.find_by(name: "Appetizer").photo.key, class: "event-image-dish", alt: "Appetizer" %>
               <div class="event-info-menu-right">
