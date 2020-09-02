@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
     # depending on the date of the event
     @future_bookings = current_user.bookings.select { |booking| booking.event.date >= Time.now }
     @past_bookings = current_user.bookings.select { |booking| booking.event.date < Time.now }
+    console
   end
 
   def create
