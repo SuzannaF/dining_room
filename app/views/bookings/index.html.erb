@@ -146,12 +146,15 @@
                     <div class="modal-body">
                       <% if current_user.reviews.include?(booking.review)%>
                        <% booking.event.reviews.each do |review|  %>
-                       <%= review.comment %>
+                        <div id="review-display">
+                          <p><strong>Overall rating:</strong> <%= review.rating %></p>
+                          <p><strong>Host rating:</strong> <%= review.rating_host %></p>
+                          <p><strong>Comment:</strong> <%= review.comment %></p>
+                        </div>
                        <%  end  %>
                       <% else  %>
                         <%= render 'reviews/form', review: @review, booking: booking %>
                       <% end %>
-
                     </div>
                   </div>
                 </div>
