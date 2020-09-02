@@ -1,10 +1,10 @@
 <div class="form">
   <%= simple_form_for [ event, booking ] do |f| %>
     <%= f.input :number_people, :label => "Number of people", :required => false, input_html: { min: '1', max: '2', step: '1', value: f.object.number_people || '1' }, id: "number-people" %>
-    <% if event.id == nil %>
-      <%= f.submit "Book", class: "btn yellow-btn btn-book w-100" %>
+    <% if booking.id == nil %>
+      <%= f.submit "Book", class: "btn yellow-btn btn-book w-100 btn-book-margin" %>
     <% else  %>
-      <%= f.submit "Update", class: "btn yellow-btn btn-book w-100" %>
+      <%= f.submit "Update", class: "btn yellow-btn btn-book w-100 btn-book-margin" %>
     <% end %>
   <% end %>
 </div>
