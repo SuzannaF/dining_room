@@ -1,10 +1,18 @@
+// ------------------ NEW MODAL STYLING
+
+.modal-card {
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+// -------------------
+
 .modal-content {
   border-radius: 3px;
   width: 500px;
 }
 
 .modal-body {
-  padding-top: 0px;
+  padding: 0px 16px;
 }
 
 .modal-header {
@@ -48,16 +56,15 @@
   line-height: 100px;
   width:248px;
   height:86px;
-  border-top: 2px solid rgba(232,188,1, 0.4);
+  // border-top: 2px solid rgba(232,188,1, 0.4);
 }
 
 .total-cost {
-  line-height: 124px;
-  height: 62px;
+  line-height: 93px;
+  height: 80px;
   width: 248px;
   font-size: 18px;
   font-weight: 600;
-  margin-top: 30px;
 }
 
 .text-eur {
