@@ -169,7 +169,7 @@ chef_three.save!
 
   file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449575/pexels-cottonbro-4253320_iwszqy.jpg')
   menu_one = Menu.new(
-    description: "This evening you will be served a menu that will take you on a journey to beautiful Spanish countryside. The simple but rich flavours of olive oil, tomato and the best beef cut will be paired with a beautiful red wine from the region of Penedès, one hour away from Barcelona. This was one of the first dishes Joaquim perfected with his grandmother. Appetiser and deseart will be a surpising complemente to the main star of the show."
+    description: "This evening you will be served a menu that will take you on a journey to beautiful Spanish countryside. The simple but rich flavours of olive oil, tomato and the best beef cut will be paired with a beautiful red wine from the region of Penedès, one hour away from Barcelona. This was one of the first dishes Joaquim perfected with his grandmother. Appetiser and deseart will be a surpising complemente to the main star of the show.",
     event: event_one
     )
   menu_one.photo.attach(io: file, filename: 'menu1.jpg', content_type: 'image/jpg')
@@ -177,7 +177,7 @@ chef_three.save!
 
   file = URI.open('https://res.cloudinary.com/dq9sg8kv9/image/upload/v1598449568/jap-image_ys3hpp.jpg')
   menu_two = Menu.new(
-    description: "This evening you will be served a menu that will take on a journey to beautiful consmopolitan Tokyo. Sushi is one the most famous dishes of Japan, however Niki brings you an experience that you can only truly have when visiting the country of the rising sun. Niki will present to you a tasting menu of seven exquisite sushi pieces, considered a lucky number in japan, symbolizing ‘togetherness’."
+    description: "This evening you will be served a menu that will take on a journey to beautiful consmopolitan Tokyo. Sushi is one the most famous dishes of Japan, however Niki brings you an experience that you can only truly have when visiting the country of the rising sun. Niki will present to you a tasting menu of seven exquisite sushi pieces, considered a lucky number in japan, symbolizing ‘togetherness’.",
     event: event_two
     )
   menu_two.photo.attach(io: file, filename: 'menu2.jpg', content_type: 'image/jpg')
