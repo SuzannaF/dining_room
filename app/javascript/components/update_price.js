@@ -4,7 +4,9 @@
 
 const numberPeople = document.querySelector("#booking_number_people");
 const eventPrice = document.querySelector("#event-price");
-const initialPrice = eventPrice.dataset.price;
+if (eventPrice) {
+  const initialPrice = eventPrice.dataset.price;
+}
 // chef if the variable is defined
 const initUpdatePrice = () => {
 console.log("hello");
