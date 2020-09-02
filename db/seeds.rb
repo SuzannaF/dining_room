@@ -70,10 +70,38 @@ chef_three.save!
 
   user_three = User.new(
     name: "Tatiana Borges",
-    email: Faker::Internet.email,
+    email: "tatiana.borges@gmail.com",
     password: "123456"
     )
   user_three.save!
+
+  user_four = User.new(
+    name: Faker::Name.name_with_middle,
+    email: Faker::Internet.email,
+    password: "123456"
+    )
+  user_four.save!
+
+  user_five = User.new(
+    name: Faker::Name.name_with_middle,
+    email: Faker::Internet.email,
+    password: "123456"
+    )
+  user_five.save!
+
+  user_six = User.new(
+    name: Faker::Name.name_with_middle,
+    email: Faker::Internet.email,
+    password: "123456"
+    )
+  user_six.save!
+
+  user_seven = User.new(
+    name: Faker::Name.name_with_middle,
+    email: Faker::Internet.email,
+    password: "123456"
+    )
+  user_seven.save!
 
   # ------------ EVENT SEEDS
 
@@ -127,6 +155,34 @@ chef_three.save!
     )
   booking.save!
 
+  booking_two = Booking.new(
+    number_people: rand(1..2),
+    user: user_four,
+    event: event_three
+    )
+  booking_two.save!
+
+  booking_three = Booking.new(
+    number_people: rand(1..2),
+    user: user_five,
+    event: event_three
+    )
+  booking_three.save!
+
+  booking_four = Booking.new(
+    number_people: rand(1..2),
+    user: user_six,
+    event: event_three
+    )
+  booking_four.save!
+
+  booking_five = Booking.new(
+    number_people: rand(1..2),
+    user: user_seven,
+    event: event_three
+    )
+  booking_five.save!
+
   # ------------ REVIEW SEEDS
 
   puts "Creating reviews..."
@@ -135,7 +191,7 @@ chef_three.save!
     comment: "Our host Lilian was amazing, everything was set up perfectly. Chef Marcus Samuelsson's food was cooked to perfection.",
     rating: 5,
     rating_host: 4,
-    booking: booking
+    booking: booking_two
     )
   review.save!
 
@@ -143,7 +199,7 @@ chef_three.save!
     comment: "What an amazing experience! I loved being able to meet so many different people and eat the most incredible food.",
     rating: 5,
     rating_host: 5,
-    booking: booking
+    booking: booking_three
     )
   review.save!
 
@@ -151,7 +207,7 @@ chef_three.save!
     comment: "The host Lilian was pure joy and Marcus's food was to die for.",
     rating: 4,
     rating_host: 5,
-    booking: booking
+    booking: booking_four
     )
   review.save!
 
@@ -159,7 +215,7 @@ chef_three.save!
     comment: "I will definitely join more of these events, and totally recommend it to food lovers and outgoing Berliners.",
     rating: 5,
     rating_host: 5,
-    booking: booking
+    booking: booking_five
     )
   review.save!
 
