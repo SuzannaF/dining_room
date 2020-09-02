@@ -18,7 +18,7 @@
   <h2>About <%= @event.chef.name %></h2>
   <div class="event-card">
     <div class="text-card-right">
-      <p><%= @event.chef.description %></p>
+      <p class="decription-spacing"><%= @event.chef.description %></p>
     </div>
     <%= cl_image_tag @event.chef.photo.key, id: "chef-img", class: "event-image-book" %>
   </div>
@@ -29,7 +29,7 @@
     <%= cl_image_tag @event.menu.photo.key, id: "event-image-menu" %>
     <%#= image_tag "menu.jpg", id: "menu-img", alt: "menu", width: 200%>
     <div class="text-card-left">
-      <p id="menu-p-padding"><%= @event.menu.description %></p>
+      <p id="menu-p-padding" class="decription-spacing"><%= @event.menu.description %></p>
       <!-- Button trigger modal -->
       <button type="button" class="btn yellow-btn" data-toggle="modal" data-target="#menu">
         See the menu
@@ -86,7 +86,7 @@
           <i class="far fa-star"></i>
         </div>
         <div>
-          <p>Your host for this evening will be <%= "#{@event.user.name}" %>, who has been living in Berlin for 14 years and has hosted a total of five events with Dining Room.<p>
+          <p class="decription-spacing">Your host for this evening will be <%= "#{@event.user.name}" %>, who has been living in Berlin for 14 years and has hosted a total of five events with Dining Room.<p>
         </div>
       </div>
     </div>
