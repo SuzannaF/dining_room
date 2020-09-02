@@ -75,8 +75,29 @@
   padding: 27px 0px 29px 0px;
 }
 
+.menu-title-padding {
+  padding-left: 20px;
+}
+
 // ----------------------------------------------
 // REVIEWS
 #review-display {
   padding: 28px 5px 13px 5px;
+  width: 447px;
+  padding: 27px;
+  margin: 21px 0px 10px 0px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+#review-form {
+  padding: 29px 25px 29px 25px;
+}
+
+.review-title-padding {
+  padding-left: 10px;
+}
+
+#review-header {
+  font-size: 20px;
+  padding: 39px 0 20px 0;
 }
