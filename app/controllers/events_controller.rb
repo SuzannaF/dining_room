@@ -14,7 +14,7 @@ class EventsController < ApplicationController
     @future_events = @events.select { |event| event.date >= Time.now }
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @events.geocoded.map do |flat|
+    @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude
