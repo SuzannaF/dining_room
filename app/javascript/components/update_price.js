@@ -11,6 +11,7 @@ if (eventPrice) {
 const initUpdatePrice = () => {
 console.log("hello");
   if (numberPeople) {
+    const initialPrice = eventPrice.dataset.price;
     console.log(numberPeople);
     numberPeople.addEventListener("input", (event) => {
       // add id to price and store inside of an variable (inside of method)
