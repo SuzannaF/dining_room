@@ -135,7 +135,7 @@
 
               <!-- Button add a review -->
               <button type="button" class="btn black-btn" id="edit-btn-past" data-toggle="modal" data-target="#review">
-              <%= booking.review ? "See reviews" : "Add a review" %>
+                <%= booking.review ? "See reviews" : "Add a review" %>
               </button>
 
               <!-- Modal -->
@@ -148,16 +148,25 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <div class="modal-body" id="review-form">
+                    <div class="modal-body-review" id="review-form">
                       <% if current_user.reviews.include?(booking.review)%>
-                       <% booking.event.reviews.each do |review|  %>
-                        <div id="review-display">
-                          <p><strong>User´s name:</strong> <%= review.booking.user.name %></p>
-                          <p><strong>Overall rating:</strong> <%= review.rating %></p>
-                          <p><strong>Host rating:</strong> <%= review.rating_host %></p>
-                          <p><strong>Comment:</strong> <%= review.comment %></p>
-                        </div>
-                       <%  end  %>
+                        <% ordered_reviews = booking.event.reviews.sort {|review_1| review_1.created_at}%>
+                        <% ordered_reviews.each do |review| %>
+                          <div id="review-display">
+                            <p><%= review.created_at.strftime("%A, %b %d") %></p>
+                            <p><strong>Comment from:</strong> <%= review.booking.user.name %></p>
+                            <p><strong>Overall rating:</strong> <% review.rating.times do %>
+                              <i class="far fa-star checked"></i>
+                             <% end %>
+                            </p>
+
+                            <p><strong>Host rating:</strong> <% review.rating_host.times do %>
+                              <i class="far fa-star checked"></i>
+                            <% end %>
+                            </p>
+                            <p><strong>Comment:</strong> <%= review.comment %></p>
+                          </div>
+                        <%  end  %>
                       <% else  %>
                         <%= render 'reviews/form', review: @review, booking: booking %>
                         <h2 id="review-header">See here all the reviews for this event:</h2>
