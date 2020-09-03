@@ -1,0 +1,5 @@
+meta_product_name: "Dining Room"
+meta_title: "Dining Room - Intimate dinners hosted by locals, cooked by professional chefs, with a special menu"
+meta_description: "With Dining Room you will be able to join intimate exclusive events, hosted by locals in their own Dining Room, where you will meet new people and be served a special menu created by a professional guest chef."
+meta_image: "jay-wennington-N_Y88TWmGwA-unsplash.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
