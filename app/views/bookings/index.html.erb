@@ -49,7 +49,7 @@
       </div>
       <div class="container">
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document" id="modal-size">
+          <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title modal-booking" id="exampleModalLongTitle">Reservation details:</h5>
@@ -139,7 +139,7 @@
               </button>
 
               <!-- Modal -->
-              <div class="modal" id="review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog_reviews modal-dialog-centered" role="document">
                   <div class="modal-content_reviews">
                     <div class="modal-header">
@@ -150,20 +150,11 @@
                     </div>
                     <div class="modal-body" id="review-form">
                       <% if current_user.reviews.include?(booking.review)%>
-                      <% ordered_reviews= booking.event.reviews.sort {|review_1| review_1.created_at}%>
-                       <% ordered_reviews.each do |review| %>
+                       <% booking.event.reviews.each do |review|  %>
                         <div id="review-display">
-                          <p><%= review.created_at.strftime("%A, %b %d") %> </p>
-                          <p><strong>Comment from:</strong> <%= review.booking.user.name %></p>
-                          <p><strong>Overall rating:</strong> <% review.rating.times do %>
-                          <i class="far fa-star checked"></i>
-                           <% end %>
-                          </p>
-
-                          <p><strong>Host rating:</strong> <% review.rating_host.times do %>
-                          <i class="far fa-star checked"></i>
-                          <% end %>
-                          </p>
+                          <p><strong>User´s name:</strong> <%= review.booking.user.name %></p>
+                          <p><strong>Overall rating:</strong> <%= review.rating %></p>
+                          <p><strong>Host rating:</strong> <%= review.rating_host %></p>
                           <p><strong>Comment:</strong> <%= review.comment %></p>
                         </div>
                        <%  end  %>
