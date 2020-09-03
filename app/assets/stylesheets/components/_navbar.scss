@@ -19,6 +19,7 @@
 
 .navbar-brand p {
   margin: 0px;
+  word-spacing: -4px;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -37,7 +38,7 @@
   }
 
   &-bookings {
-    width: 114px;
+    width: 116px;
     margin-right: 15px;
   }
 }

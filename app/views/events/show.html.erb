@@ -134,7 +134,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="row">
+          <div class="row modal-card">
             <div class="col-6 card-booking">
               <p class="chef-title"> <%= @event.chef.name %> </p>
               <%= cl_image_tag @event.chef.photo.key, class: "event-image-book" %>
@@ -148,16 +148,18 @@
                 <i class="fas fa-map-marker-alt color-yellow"></i>
                 <%= @event.address %>
               </p>
-              <p class="total-cost">Total cost:</p>
             </div>
           </div>
           <div class="row">
             <div class="col-6">
-              <%= render 'bookings/form', booking: @booking, event: @event %>
+              <p class="total-cost">Total cost:</p>
             </div>
             <div class="col-6" id="event-price" data-price="<%= @event.price %>">
               <%= @event.price %> <span class="text-eur">EUR</span>
             </div>
+          </div>
+          <div>
+            <%= render 'bookings/form', booking: @booking, event: @event %>
           </div>
         </div>
       </div>

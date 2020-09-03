@@ -1,10 +1,19 @@
+// ------------------ NEW MODAL STYLING
+
+.modal-card {
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+// -------------------
+
 .modal-content {
   border-radius: 3px;
   width: 500px;
+
 }
 
 .modal-body {
-  padding-top: 0px;
+  padding: 0px 16px;
 }
 
 .modal-header {
@@ -19,7 +28,7 @@
 }
 
 .card-booking {
-  margin-top: 23px;
+  margin-top: -1px;
 }
 
 .chef-title {
@@ -45,19 +54,19 @@
 #event-price {
   font-size: 30px;
   font-weight: 400;
-  line-height: 100px;
+  line-height: 90px;
   width:248px;
-  height:86px;
-  border-top: 2px solid rgba(232,188,1, 0.4);
+  height: 63px;
+
 }
 
 .total-cost {
-  line-height: 124px;
-  height: 62px;
+  line-height: 97px;
+  height: 63px;
   width: 248px;
   font-size: 18px;
   font-weight: 600;
-  margin-top: 30px;
+
 }
 
 .text-eur {
@@ -101,3 +110,23 @@
   font-size: 20px;
   padding: 39px 0 20px 0;
 }
+
+#review {
+  .modal-dialog_reviews {
+    width: 800px;
+    margin: 1.75rem auto;
+  }
+  .modal-content_reviews{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 0;
+  }
+}
+
+
