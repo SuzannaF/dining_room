@@ -147,6 +147,7 @@
                       <% if current_user.reviews.include?(booking.review)%>
                        <% booking.event.reviews.each do |review|  %>
                         <div id="review-display">
+                          <p><strong>User´s name:</strong> <%= review.booking.user.name %></p>
                           <p><strong>Overall rating:</strong> <%= review.rating %></p>
                           <p><strong>Host rating:</strong> <%= review.rating_host %></p>
                           <p><strong>Comment:</strong> <%= review.comment %></p>
