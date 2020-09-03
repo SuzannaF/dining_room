@@ -4,7 +4,66 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+    .rails-error-page {
+      /*background-image: url("https://images.unsplash.com/flagged/photo-1587302164675-820fe61bbd55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80");
+      background-size: contain;
+      background-repeat: no-repeat;*/
+      height: 810px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .rails-error-header-one{
+      font-size: 443px;
+      font-family: "Inter", "sans-serif";
+      color: rgb(43, 42, 41);
+      text-shadow:
+        0 1px 0 rgb(61, 59, 58),
+        0 2px 0 rgb(61, 59, 58),
+        0 3px 0 rgb(61, 59, 58),
+        0 4px 0 rgb(61, 59, 58),
+        0 5px 0 rgb(61, 59, 58),
+        0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.3),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.25),
+        0 10px 10px rgba(0,0,0,.2),
+        0 20px 20px rgba(0,0,0,.15);
+      position: relative;
+      right: -154px;
+    }
+
+    .rails-error-header-two{
+      font-size: 443px;
+      font-family: "Inter", "sans-serif";
+      color: rgb(43, 42, 41);
+      text-shadow:
+        0 1px 0 rgb(61, 59, 58),
+        0 2px 0 rgb(61, 59, 58),
+        0 3px 0 rgb(61, 59, 58),
+        0 4px 0 rgb(61, 59, 58),
+        0 5px 0 rgb(61, 59, 58),
+        0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.3),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.25),
+        0 10px 10px rgba(0,0,0,.2),
+        0 20px 20px rgba(0,0,0,.15);
+      position: relative;
+      left: -178px;
+    }
+
+    .error-img {
+      height: 520px;
+      position: relative;
+      top: 0px;
+      right: 0px;
+    }
+
+  /*.rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,18 +109,24 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  }*/
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
+<body>
+  <div class="rails-error-page">
+    <h1 class="rails-error-header-one">4</h1>
+    <img src="https://images.unsplash.com/flagged/photo-1587302164675-820fe61bbd55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80" alt="error-lemon" class="error-img">
+    <h1 class="rails-error-header-two">4</h1>
+  </div>
+<!-- <body class="rails-default-error-page">
+  This file lives in public/404.html
   <div class="dialog">
     <div>
       <h1>The page you were looking for doesn't exist.</h1>
       <p>You may have mistyped the address or the page may have moved.</p>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
-  </div>
+  </div> -->
 </body>
 </html>
