@@ -4,7 +4,43 @@
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+    .rails-error-500-page {
+      height: 810px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .rails-error-header {
+      font-size: 443px;
+      font-family: "Poppins", "serif";
+      color: rgb(43, 42, 41);
+      text-shadow:
+        0 1px 0 rgb(61, 59, 58),
+        0 2px 0 rgb(61, 59, 58),
+        0 3px 0 rgb(61, 59, 58),
+        0 4px 0 rgb(61, 59, 58),
+        0 5px 0 rgb(61, 59, 58),
+        0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.3),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.25),
+        0 10px 10px rgba(0,0,0,.2),
+        0 20px 20px rgba(0,0,0,.15);
+      position: relative;
+      left: -828px;
+      top: -14px;
+    }
+
+    .error-img-500 {
+      height: 688px;
+      position: relative;
+      left: 319px;
+      top: -16px;
+}
+    }
+  /*.rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,17 +86,20 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  }*/
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
+<body>
+  <div class="rails-error-500-page">
+    <img src="https://images.unsplash.com/photo-1582287014914-1db836ccf0f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" class="error-img-500">
+    <h1 class="rails-error-header">5</h1>
+  </div>
+<!--   <div class="dialog">
     <div>
       <h1>We're sorry, but something went wrong.</h1>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
-  </div>
+  </div> -->
 </body>
 </html>

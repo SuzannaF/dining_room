@@ -139,7 +139,7 @@
               </button>
 
               <!-- Modal -->
-              <div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal" id="review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog_reviews modal-dialog-centered" role="document">
                   <div class="modal-content_reviews">
                     <div class="modal-header">
@@ -152,9 +152,17 @@
                       <% if current_user.reviews.include?(booking.review)%>
                        <% booking.event.reviews.each do |review|  %>
                         <div id="review-display">
-                          <p><strong>User´s name:</strong> <%= review.booking.user.name %></p>
-                          <p><strong>Overall rating:</strong> <%= review.rating %></p>
-                          <p><strong>Host rating:</strong> <%= review.rating_host %></p>
+                          <p><%= review.created_at.strftime("%A, %b %d") %> </p>
+                          <p><strong>Comment from:</strong> <%= review.booking.user.name %></p>
+                          <p><strong>Overall rating:</strong> <% review.rating.times do %>
+                          <i class="far fa-star"></i>
+                           <% end %>
+                          </p>
+
+                          <p><strong>Host rating:</strong> <% review.rating_host.times do %>
+                          <i class="far fa-star"></i>
+                          <% end %>
+                          </p>
                           <p><strong>Comment:</strong> <%= review.comment %></p>
                         </div>
                        <%  end  %>
