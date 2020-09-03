@@ -50,7 +50,7 @@
 
 .event-image {
   object-fit: cover;
-  object-position: 50% 50%;
+  object-position: 50% 39%;
   overflow: hidden;
   border-style: none;
   border-radius: 3px;
@@ -60,6 +60,7 @@
   margin: 0px 0px 0px 74px;
 
   &-book {
+    object-position: 50% 39%;
     border-radius: 3px;
     margin-bottom: 10px;
     height: 160px;
