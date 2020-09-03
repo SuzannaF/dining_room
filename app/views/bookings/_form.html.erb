@@ -1,6 +1,7 @@
 <div class="form">
   <%= simple_form_for [ event, booking ] do |f| %>
-    <%= f.input :number_people, :label => "Number of people", :required => false, input_html: { min: '1', max: '2', step: '1', value: f.object.number_people || '1' }, id: "number-people" %>
+  <!-- label_html: '<i class="fas fa-user-friends color-yellow"></i>' -->
+    <%= f.input :number_people, :required => false, input_html: { min: '1', max: '2', step: '1', value: f.object.number_people || '1', class: "number-people-input" } %>
     <% if booking.id == nil %>
       <%= f.submit "Book", class: "btn yellow-btn btn-book w-100 btn-book-margin" %>
     <% else  %>
