@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       redirect_to bookings_path
-      flash[:notice] = "#{@review.booking.user.name} your review was submitted. Thank you for your feedback!"
+      flash[:notice] = "Thank you for your feedback #{@review.booking.user.name}!"
     end
   end
 
