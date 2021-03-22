@@ -20,8 +20,8 @@ Dish.delete_all
 
 puts "Creating chefs..."
 
-date_one = DateTime.new(2021, 9, 25, 19, 00, 0)
-date_two = DateTime.new(2021, 9, 27, 20, 00, 0)
+date_one = DateTime.new(2021, 4, 25, 19, 00, 0)
+date_two = DateTime.new(2021, 4, 27, 20, 00, 0)
 date_three = DateTime.new(2020, 8, 15, 18, 00, 0)
 
 # ------------ CHEF SEEEDS
